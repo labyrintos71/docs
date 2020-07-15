@@ -1,6 +1,6 @@
-# docs
+# blog
 
-> AppCookBook
+> labin-docs
 
 ## Development
 

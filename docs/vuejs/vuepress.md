@@ -3,7 +3,7 @@
 ## VuePress
 
 VuePress 는 Vue 기반으로 만들어진 정적 사이트 생성 엔진이며 자세한 내용은 [vuepress.vuejs.org](https://vuepress.vuejs.org/) 에서 확인해볼수 있다.  
-여태까지는 [Jenkins](https://www.jenkins.io/)를 이용해서 깃허브 블로그를 만들었는데, 뷰 공부하는겸 새로 바꾸기로 했다.  
+여태까지는 [Jekyll](https://jekyllrb-ko.github.io/)를 이용해서 깃허브 블로그를 만들었는데, 뷰 공부하는겸 새로 바꾸기로 했다.  
 
 ## Getting Started
 ::: warning
@@ -57,7 +57,7 @@ Settings - GitHub Pages - Source 에 가서 gh-pages로 바꿔주도록 하자
 
 ### 업로드 쉘 만들기
 매번 브렌치를 왔다갔다 하면 업로드 하기에는 효율적이지 않으므로 아래 deploy.sh 를 만들어 주자. 
- 하이라이팅 들어가있는 부분을 위 주석에 맞춰서 본인 repository의 branch로 설정해주자.
+ 하이라이팅 들어가있는 부분을 본인 repository의 branch로 설정해주자.
 ```sh{25}
 #!/usr/bin/env sh
 
@@ -87,3 +87,9 @@ git push -f https://github.com/labyrintos71/docs.git master:gh-pages
 
 cd -
 ```
+
+쉘파일을 실행, 혹은 
+```sh
+yarn docs:build
+```
+해서 나온 dist 폴더를 깃에 올리면 정상적으로 작동하는것을 확인할 수 있다.

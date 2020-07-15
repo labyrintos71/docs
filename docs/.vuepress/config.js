@@ -88,6 +88,7 @@ module.exports = {
         collapsable: false,
         children: [
           '/electron/',
+          '/electron/default_setting',
         ]
       },
       {

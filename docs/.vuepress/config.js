@@ -2,7 +2,7 @@ const { description } = require('../../package')
 
 module.exports = {
   base: '/docs/',
-  title: 'Vuepress Docs Boilerplate',
+  title: 'Labyrintos71\'s Docs',
   description: description,
   head: [
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
@@ -15,35 +15,113 @@ module.exports = {
     lastUpdated: false,
     nav: [
       {
-        text: 'Guide',
-        link: '/guide/',
+        text: 'Kotlin',
+        link: '/kotlin/',
       },
       {
-        text: 'Config',
-        link: '/config/'
+        text: 'Android',
+        link: '/android/'
       },
       {
-        text: 'VuePress',
-        link: 'https://v1.vuepress.vuejs.org'
+        text: 'Flutter',
+        link: '/flutter/'
+      },
+      {
+        text: 'VueJS',
+        link: '/vuejs/'
+      },
+      {
+        text: 'Electron',
+        link: '/electron/'
+      },
+      {
+        text: 'Golang',
+        link: '/golang/'
+      },
+      {
+        text: 'Github',
+        link: 'https://github.com/labyrintos71/docs'
       }
     ],
-    sidebar: {
-      '/guide/': [
-        {
-          title: 'Guide',
-          collapsable: false,
-          children: [
-            '',
-            'using-vue',
-          ]
-        }
-      ],
-    }
+    sidebar: [
+      // {
+      //   title: 'Group 1', 
+      //   //path: '/guide/', 
+      //   collapsable: false,
+      //   children: [
+      //     '/guide/',
+      //     '/guide/using-vue',
+      //   ]
+      // },
+      {
+        title: 'Kotlin',
+        collapsable: false,
+        children: [
+          '/kotlin/',
+        ]
+      },
+      {
+        title: 'Android',
+        collapsable: false,
+        children: [
+          '/android/',
+        ]
+      },
+      {
+        title: 'Flutter',
+        collapsable: false,
+        children: [
+          '/flutter/',
+        ]
+      },
+      {
+        title: 'VueJS',
+        collapsable: false,
+        children: [
+          '/vuejs/',
+          '/vuejs/vuepress',
+          '/vuejs/markdown',
+        ]
+      },
+      {
+        title: 'Electron',
+        collapsable: false,
+        children: [
+          '/electron/',
+        ]
+      },
+      {
+        title: 'Golang',
+        collapsable: false,
+        children: [
+          '/golang/',
+        ]
+      }
+    ]
+    // sidebar: {
+
+    //   '/guide/': [
+    //     {
+    //       title: 'Guidess',
+    //       collapsable: false,
+    //       children: [
+    //         '',
+    //         'using-vue',
+    //       ]
+    //     },
+    //   ],
+    //   '/javascript/': [
+    //     {
+    //       title: 'Guide',
+    //       collapsable: false,
+    //       children: [
+    //         '',
+    //       ]
+    //     }
+    //   ],
+    // }
   },
 
-  /**
-   * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
-   */
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',

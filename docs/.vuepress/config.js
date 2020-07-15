@@ -63,9 +63,14 @@ module.exports = {
         children: [
           '/kotlin/',
           '/kotlin/variable',
+          '/kotlin/ifwhen',
+          '/kotlin/classobject',
+          '/kotlin/function',
+          '/kotlin/extensionfunction',
+          '/kotlin/delegation',
           '/kotlin/selenium',
         ]
-      },{
+      }, {
         title: 'Coroutine',
         collapsable: false,
         children: [

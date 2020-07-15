@@ -41,3 +41,24 @@ function createWindow() {
   })
 }
 ```
+
+## Custom Titlebar
+[custom-electron-titlebar](https://github.com/AlexTorresSk/custom-electron-titlebar) 를 사용햇다.
+```sh
+yarn add custom-electron-titlebar
+```
+
+### AppVue.vue
+```js
+
+const customTitlebar = window.require("custom-electron-titlebar");
+const titlebar = new customTitlebar.Titlebar({
+  backgroundColor: customTitlebar.Color.fromHex("#3c3c3c"),
+  shadow: true
+});
+titlebar.updateTitle("CustomTitleBar");
+```
+
+
+
+[참고](https://jsongsong.tistory.com/51)

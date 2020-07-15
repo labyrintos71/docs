@@ -16,7 +16,8 @@
 ```
 
 ## Vue CLI
-Vue.js는 단일 페이지 애플리케이션를 빠르게 구축할 수 있는 공식 CLI를 제공하는데 yarn 이용해서 설치 할 수 있다.
+Vue.js는 단일 페이지 애플리케이션를 빠르게 구축할 수 있는 공식 CLI를 제공하는데 yarn 이용해서 설치 할 수 있다. yarn은
+[NodeJS-시작하기](/nodejs/#yarn)에서 설치할 수 있다.
 ### Install
 ```sh
 yarn global add @vue/cli

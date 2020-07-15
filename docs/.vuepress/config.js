@@ -80,7 +80,6 @@ module.exports = {
         children: [
           '/vuejs/',
           '/vuejs/vuepress',
-          '/vuejs/markdown',
         ]
       },
       {

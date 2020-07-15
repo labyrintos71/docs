@@ -88,7 +88,7 @@ git push -f https://github.com/labyrintos71/docs.git master:gh-pages
 cd -
 ```
 
-쉘파일을 실행, 혹은 
+쉘파일을 실행 하거나, 혹은 
 ```sh
 yarn docs:build
 ```

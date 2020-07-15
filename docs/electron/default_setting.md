@@ -49,8 +49,8 @@ yarn add custom-electron-titlebar
 ```
 
 ### AppVue.vue
+스크립트 칸에 추가해주면 된다.
 ```js
-
 const customTitlebar = window.require("custom-electron-titlebar");
 const titlebar = new customTitlebar.Titlebar({
   backgroundColor: customTitlebar.Color.fromHex("#3c3c3c"),

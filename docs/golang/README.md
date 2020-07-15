@@ -14,11 +14,11 @@ vscode go 설치
 ctrl + shitf + p
 go install update
 
-vscode settings
+vscode settings.json
 ```json
 {
     "go.useLanguageServer": true,
-    "go.gopath": "C:\\Users\\labyr\\go",
+    "go.gopath": "C:\\Users\\abc\\go",
     "go.goroot": "C:\\go",
     "go.testFlags": ["-v"]
 }

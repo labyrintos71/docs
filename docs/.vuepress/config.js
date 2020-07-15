@@ -1,4 +1,4 @@
-const { description } = require('../../package')
+const { description } = require('../../package.json')
 
 module.exports = {
   base: '/docs/',
@@ -59,7 +59,7 @@ module.exports = {
       // },
       {
         title: 'Kotlin',
-        collapsable: false,
+       // collapsable: false,
         children: [
           '/kotlin/',
           '/kotlin/variable',
@@ -72,7 +72,7 @@ module.exports = {
         ]
       }, {
         title: 'Coroutine',
-        collapsable: false,
+       // collapsable: false,
         children: [
           '/coroutine/',
           '/coroutine/coroutine_concept',
@@ -82,7 +82,7 @@ module.exports = {
       },
       {
         title: 'Android',
-        collapsable: false,
+      //  collapsable: false,
         children: [
           '/android/',
           '/android/permission',
@@ -90,21 +90,21 @@ module.exports = {
       },
       {
         title: 'Flutter',
-        collapsable: false,
+       // collapsable: false,
         children: [
           '/flutter/',
         ]
       },
       {
         title: 'NodeJS',
-        collapsable: false,
+       // collapsable: false,
         children: [
           '/nodejs/',
         ]
       },
       {
         title: 'VueJS',
-        collapsable: false,
+      //  collapsable: false,
         children: [
           '/vuejs/',
           '/vuejs/basic',
@@ -113,7 +113,7 @@ module.exports = {
       },
       {
         title: 'Electron',
-        collapsable: false,
+       // collapsable: false,
         children: [
           '/electron/',
           '/electron/default_setting',
@@ -121,7 +121,7 @@ module.exports = {
       },
       {
         title: 'Golang',
-        collapsable: false,
+       // collapsable: false,
         children: [
           '/golang/',
           '/golang/server',

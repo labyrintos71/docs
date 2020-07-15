@@ -62,6 +62,8 @@ module.exports = {
         collapsable: false,
         children: [
           '/kotlin/',
+          '/kotlin/basic',
+          '/kotlin/coroutine',
         ]
       },
       {

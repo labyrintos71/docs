@@ -27,6 +27,10 @@ module.exports = {
         link: '/flutter/'
       },
       {
+        text: 'NodeJS',
+        link: '/nodejs/'
+      },
+      {
         text: 'VueJS',
         link: '/vuejs/'
       },
@@ -72,6 +76,13 @@ module.exports = {
         collapsable: false,
         children: [
           '/flutter/',
+        ]
+      },
+      {
+        title: 'NodeJS',
+        collapsable: false,
+        children: [
+          '/nodejs/',
         ]
       },
       {

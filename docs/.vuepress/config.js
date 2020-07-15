@@ -62,12 +62,17 @@ module.exports = {
         collapsable: false,
         children: [
           '/kotlin/',
-          '/kotlin/basic',
-          '/kotlin/coroutine_concept',
-          '/kotlin/coroutine_description',
-          '/kotlin/coroutine_basic1',
-          '/kotlin/coroutine_basic2',
+          '/kotlin/variable',
           '/kotlin/selenium',
+        ]
+      },{
+        title: 'Coroutine',
+        collapsable: false,
+        children: [
+          '/coroutine/',
+          '/coroutine/coroutine_concept',
+          '/coroutine/coroutine_basic1',
+          '/coroutine/coroutine_basic2',
         ]
       },
       {

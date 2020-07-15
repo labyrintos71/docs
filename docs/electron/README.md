@@ -1,7 +1,7 @@
 # 시작하기
 
 ## Electron + Vuetify
-메테리얼 UI에 기반한 Vuetify 프레임워크를 사용하면 아무래도 UI 구성이 쉬울것 같아서 Vuetify를 택했다. vue cli를 이용해 설치 할 것이므로 vue cli가 설치되어있어야 한다.  
+메테리얼 UI에 기반한 Vuetify 프레임워크를 사용하면 아무래도 UI 구성이 쉬울것 같아서 Vuetify를 택했다. vue cli를 이용해 설치 할 것이므로  [yarn](/nodejs/#yarn), [vue-cli](/vuejs/#vue-cli)가 설치되어있어야 한다. 
 
 프로젝트 생성 순서는 다음과 같다.
 ```sh

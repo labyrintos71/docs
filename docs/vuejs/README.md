@@ -16,7 +16,6 @@
 ```
 
 ## Vue CLI
-## Getting Started
 ::: warning
 VuePress는 [Node.js](https://nodejs.org/ko/) 버젼 8.9 이상 필요함.
 :::  

@@ -16,6 +16,10 @@
 ```
 
 ## Vue CLI
+## Getting Started
+::: warning
+VuePress는 [Node.js](https://nodejs.org/ko/) 버젼 8.9 이상 필요함.
+:::  
 Vue.js는 단일 페이지 애플리케이션를 빠르게 구축할 수 있는 공식 CLI를 제공하는데 yarn 이용해서 설치 할 수 있다. yarn은
 [NodeJS-시작하기](/nodejs/#yarn)에서 설치할 수 있다.
 ### Install

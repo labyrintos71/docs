@@ -1,11 +1,10 @@
 # 시작하기
 
-## sdf
-
-- Type: `string`
-- Default: `/`
-
-## f
-
-- Type: `string`
-- Default: `/`
+## Go
+[Go](https://golang.org/)언어는 구글에서 개발한 프로그래밍 언어이다. 공식 홈페이지에서는 아래와 같이 설명하고 있다.
+```
+Go는 간결하고 신뢰성 있으며 효율적인 소프트웨어를 손쉽게 만들기 위한 오픈소스 프로그래밍 언어다.
+```
+## Getting Started
+### Install
+[https://golang.org/dl/](https://golang.org/dl/)에서 다운 받을 수 있다.

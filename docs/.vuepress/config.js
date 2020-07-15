@@ -67,6 +67,7 @@ module.exports = {
           '/kotlin/coroutine_description',
           '/kotlin/coroutine_basic1',
           '/kotlin/coroutine_basic2',
+          '/kotlin/selenium',
         ]
       },
       {

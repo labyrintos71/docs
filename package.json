@@ -1,16 +1,16 @@
 {
-  "name": "docs",
-  "version": "0.0.1",
+  "name": "labin-docs",
+  "version": "1.0.0",
   "description": "AppCookBook",
   "main": "index.js",
   "authors": {
     "name": "SooHyun",
     "email": "labyrintos71@gmail.com"
   },
-  "repository": "docs/docs",
+  "repository": "https://github.com/labyrintos71/docs.git",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "license": "MIT",
   "devDependencies": {

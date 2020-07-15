@@ -1,4 +1,10 @@
 # Coroutine 기초 - 1
+## Getting Started
+[kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines) 에서 깃허브를 확인 할 수 있으며 아래로 설치 할 수 있다.
+```sh
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.7'
+```
+
 코틀린 공식 가이드에 있는 예제를 보도록 하자.
 ```kotlin
 import kotlinx.coroutines.*

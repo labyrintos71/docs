@@ -69,6 +69,7 @@ module.exports = {
         collapsable: false,
         children: [
           '/android/',
+          '/android/permission',
         ]
       },
       {
@@ -90,6 +91,7 @@ module.exports = {
         collapsable: false,
         children: [
           '/vuejs/',
+          '/vuejs/basic',
           '/vuejs/vuepress',
         ]
       },

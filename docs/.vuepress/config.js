@@ -63,7 +63,10 @@ module.exports = {
         children: [
           '/kotlin/',
           '/kotlin/basic',
-          '/kotlin/coroutine',
+          '/kotlin/coroutine_concept',
+          '/kotlin/coroutine_description',
+          '/kotlin/coroutine_basic1',
+          '/kotlin/coroutine_basic2',
         ]
       },
       {

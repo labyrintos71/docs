@@ -1,8 +1,7 @@
 # Vue 기초
 
 ## DataBind
-Vue 생성자 함수로 뷰모델을 만드는데 이 Vue 인스턴스를 스크립트 칸에 만들어 준다.. 
-el 은 div와 연결해줄 키, data 부분엔 사용할 데이터, methods 에는 사용하고자 하는 함수를 구현하면 된다.
+Vue 생성자 함수로 뷰모델을 만드는데 이 Vue 인스턴스를 스크립트 칸에 만들어 준다. el 은 div와 연결해줄 키, data 부분엔 사용할 데이터, methods 에는 사용하고자 하는 함수를 구현하면 된다.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -137,10 +136,9 @@ font-bold 처럼 -가 들어간건 사용할때 ' 로 감싸줘야 한다.
 </body>
 ```
 ## Computed & Watch
-computed 속성은 종속 대상을 따라 저장(캐싱)된다는 것 입니다. computed 속성은 해당 속성이 종속된 대상이 변경될 때만 함수를 실행합니다.  
-즉 message가 변경되지 않는 한, computed 속성인 reversedMessage를 여러 번 요청해도 계산을 다시 하지 않고 계산되어 있던 결과를 즉시 반환합니다.
+computed 속성은 종속 대상을 따라 저장(캐싱)된다는 것 이다. computed 속성은 해당 속성이 종속된 대상이 변경될 때만 함수를 실행한다. 즉 message가 변경되지 않는 한, computed 속성인 reversedMessage를 여러 번 요청해도 계산을 다시 하지 않고 계산되어 있던 결과를 즉시 반환한다.
 
-또한 Date.now()처럼 아무 곳에도 의존하지 않는 computed 속성의 경우 절대로 업데이트되지 않는다는 뜻입니다.  
+또한 Date.now()처럼 아무 곳에도 의존하지 않는 computed 속성의 경우 절대로 업데이트되지 않는다는 뜻이다.  
 Vue 인스턴스의 데이터 변경을 관찰하고 이에 반응하는 보다 일반적인 watch 속성도 있다.  
 요컨대, computed는 대상이 변경될때만 호출되고 watch는 상시 감시한다고 보면 된다.
 

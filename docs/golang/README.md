@@ -35,9 +35,11 @@ Workspace
       └─ main.go
 ```
 이제 아까 `go env`에서 나왔던 GOPATH에 workspace경로를 등록해줄 차례인데,  
-윈도우 검색에 `시스템 환경 변수 편집` -> `환경 변수` -> `사용자 변수` -> `GOPATH` 편집을 누르고 본인 workspace 경로로 맞춰준다.(GOPATH가 없다면 새로만들기로 만들어 준다.)  
-다했다면 `go env`로 경로가 제대로 들어갔는지 확인해보자.
-
+윈도우 검색에 `시스템 환경 변수 편집` -> `환경 변수` -> `사용자 변수` -> `GOPATH` 편집을 누르고 본인 workspace 경로로 맞춰준다. 다했다면 `go env`로 경로가 제대로 들어갔는지 확인해보자.
+:::tip
+GOPATH가 없다면 새로만들기로 만들어 준다.  
+Go sdk를 기본 경로가 아니라 다른 경로에 깔았다면 GOROOT 경로도 sdk 경로로 맞춰야된다.
+:::
 ## VSCode Setting  
 1. 플러그인탭에 가서 `go`를 설치해준다.
 2. `ctrl + shitf + p` -> `Go: Install/Update Tools`에서 전부다 체크후 설치

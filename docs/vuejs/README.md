@@ -29,3 +29,19 @@ yarn global add @vue/cli
 ```sh
 yarn global upgrade --latest @vue/cli
 ```
+
+
+## Vue CLI 로 프로젝트 만들기
+프로젝트는 아래처럼 생성할 수 있다.  
+옵션을 고를때 manually로 가서 vuex와 router 추가하는걸 추천한다.
+```sh
+vue create [projectname]
+cd [projectname]
+vue add vuetify
+```
+
+프로젝트를 생성하고 `yarn serve`하면 http://localhost:8080 에서 확인해 볼 수 있다.
+```sh
+yarn serve
+yarn build
+```

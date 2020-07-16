@@ -124,7 +124,7 @@ module.exports = {
        // collapsable: false,
         children: [
           '/golang/',
-          '/golang/server',
+          '/golang/echo',
           '/golang/wss',
           '/golang/database',
         ]

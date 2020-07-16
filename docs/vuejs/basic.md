@@ -8,8 +8,25 @@ Vue에 있어서 컴포넌트는 가장 중요한 개념이라고 생각된다. 
 :::
 쉽게 말해서 위 이미지를 기준으로, 헤더와 사이드바, 콘첸츠 영역.. 으로 나뉘고 또 콘첸츠 영역은 포스트 여러개로 나뉜다. 이 작은 하나의 영역이 하나의 컴포넌트라고 생각하면 쉽다. 즉, 컴포넌트와 컴포넌트가 모여 새로운 컴포넌트를 만들게 되는 트리 형태라고 생각하면 된다.
 
+## Single File Components
+싱글 파일 컴포넌트는 화면의 특정 영역에 대한 HTML, CSS, JS를 한 파일에서 관리하는 방법이고, 현재 Vue에서 사용하고 있다. 
+.vue 확장자로 끝나는 파일들은 아래와 같은 구조를 가진다.
+```html
+<template>
+    <!--화면에 표시할 요소들을 정의함, HTML + 뷰 데이터 바인딩-->
+</template>
+
+<script>
+    // 뷰 컴포넌트에 대한 내용, script가 들어감 
+</script>
+
+<style>
+    /* CSS 들어가는 부분 */
+</style>
+```
+
 ## Vuetify
-[Vuetify](https://vuetifyjs.com/ko/)는 Vue.js를 위해 개발된 디자인 프레임워크이다. Material Design Spec을 준수하며 다양한 컴포넌트들을 만들어져 있으므로 필요한 컴포넌트를 가져다 쓰면 쉽게 Material한 서비스를 만들수 있다. 문서에서 전반적으로 사용하며 이 강의도 Vuetify 기준으로 작성 될 것이므로 없으면 꼭 깔도록 하자. [Vue Cli](/vuejs/#vue-cli)
+[Vuetify](https://vuetifyjs.com/ko/)는 Vue.js를 위해 개발된 디자인 프레임워크이다. Material Design Spec을 준수하며 다양한 컴포넌트들로 만들어져 있으므로 필요한 컴포넌트를 가져다 쓰면 쉽게 Material한 서비스를 만들수 있다. 문서에서 전반적으로 사용하며 이 강의도 Vuetify 기준으로 작성 될 것이므로 없으면 꼭 깔도록 하자. [Vue Cli](/vuejs/#vue-cli)
 
 ## Grid System
 
@@ -18,3 +35,4 @@ https://blog.minamiland.com/376
 https://vuetifyjs.com/ko/components/grids/
 http://designbase.co.kr/webdesign-4/
 http://styleguide.co.kr/content/resolution-grid/gridsystem.php
+

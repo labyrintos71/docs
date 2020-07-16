@@ -68,12 +68,11 @@ go mod verify
 ```
 
 ## Project Generate
-프로젝트 생성은 간단하다. 아까 만든 workspace/src에 프로젝트 폴더를 하나 만든다.  
-해당 폴더에서
+프로젝트 생성은 간단하다. 아까 만든 workspace/src에 프로젝트 폴더를 하나 만들고 폴더 안에서 아래 명령어를 입력한다.
 ```bash
 go mod init
 ```
-입력하고, 아래 소스로 main.go를 작성해보자.
+그후 main.go 를 만들고 아래 소스를 작성해보자.
 ```go
 package main
  

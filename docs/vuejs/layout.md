@@ -1,3 +1,4 @@
+# Vuetify layout
 ```html
 <template>
   <v-navigation-drawer app permanent color="#3c3c3c">
@@ -57,3 +58,9 @@ export default {
 };
 </script>
 ```
+  https://blog.minamiland.com/376
+  https://chansbro.github.io/vue/vuetify_tutorial1
+  http://blog.weirdx.io/post/60376
+  https://vuetifyjs.com/ko/styles/spacing/
+
+  

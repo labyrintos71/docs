@@ -58,7 +58,13 @@ const titlebar = new customTitlebar.Titlebar({
 });
 titlebar.updateTitle("CustomTitleBar");
 ```
-
+## Hide Scrollbar
+일렉트론에서 스크롤 바를 안쓸경우 아래 옵션을 app.vue에 추가시켜주면 된다.
+```css
+::-webkit-scrollbar {
+    display: none;
+}
+```
 
 
 [참고](https://jsongsong.tistory.com/51)

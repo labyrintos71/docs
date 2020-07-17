@@ -30,7 +30,7 @@ Vue에 있어서 컴포넌트는 가장 중요한 개념이라고 생각된다. 
 
 ## Grid System
 그리드 시스템이란, 디자인의 레이아웃에 규칙을 부여하는 수단이라고 하는데 쉽게 말해서 그리드 위에서 디자인 한다고 생각하면 된다. 그리드 시스템은 크게 4가지로 볼 수 있는데 아래 그림을 참고하면 된다.
-![img](/assets/img/gridsystem.png)
+![img](https://github.com/labyrintos71/docs/blob/gh-pages/assets/img/gridsystem.png?raw=true)
 
 ### ① Margins
 초록색 부분에 해당하며, 컨테이너기준 좌우 여백을 말한다.

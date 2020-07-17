@@ -32,7 +32,7 @@ yarn global upgrade --latest @vue/cli
 
 ## Vue CLI 로 프로젝트 만들기
 Vue Cli 및 Vuetify와 함께 사용할 것 이므로 `vue create` 이후 `add vuetify`도 해준다.
-옵션을 고를 때 manually로 가서 vuex와 router 추가하는걸 추천한다.
+설치할 때 manually로 가서 `vuex`와 `route` 추가하도록 하자.
 ```sh
 vue create [projectname]
 cd [projectname]

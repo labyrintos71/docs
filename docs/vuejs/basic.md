@@ -30,6 +30,7 @@ Vue에 있어서 컴포넌트는 가장 중요한 개념이라고 생각된다. 
 
 ## Grid System
 그리드 시스템이란, 디자인의 레이아웃에 규칙을 부여하는 수단이라고 하는데 쉽게 말해서 그리드 위에서 디자인 한다고 생각하면 된다.
+![img](/assets/gridsystem.png)
 ### Container
 컨텐츠 영역의 가장 큰폭을 나타낸다. (컬럼 + 거터) 
 ### Columns
@@ -41,23 +42,36 @@ Vue에 있어서 컴포넌트는 가장 중요한 개념이라고 생각된다. 
 
 디자인의 방법론이지만 Vuetify는 반응형을 고려하여 만들어졌기 때문에 그리드 시스템 12단 형식을 사용하고 있다. 관련된 정보는 [vuetifyjs.com/ko/components/grids/에서 확인 가능하다](https://vuetifyjs.com/ko/components/grids/)에서 확인 가능하다
 
+<!-- App.vue -->
+```html
+<v-app>
+  <v-navigation-drawer app>
+    <!-- -->
+  </v-navigation-drawer>
 
+  <v-app-bar app>
+    <!-- -->
+  </v-app-bar>
 
-  <v-container fluid fill-height>
-    <v-layout row wrap>
-      <v-flex xs2>
-        <v-card tile height="100%" color="#3c3c3c" outlined="true">
-          <v-card-text class="ma-0 pa-0">asd</v-card-text>
-        </v-card>
-      </v-flex>
-      <v-flex xs10>
-        <v-card tile height="100%" color="#A4A1E1">
-          <v-card-text class="ma-0 pa-0">asd</v-card-text>
-        </v-card>
-      </v-flex>
-    </v-layout>
-  </v-container>
+  <!-- Sizes your content based upon application components -->
+  <v-main>
+
+    <!-- Provides the application the proper gutter -->
+    <v-container fluid>
+
+      <!-- If using vue-router -->
+      <router-view></router-view>
+    </v-container>
+  </v-main>
+
+  <v-footer app>
+    <!-- -->
+  </v-footer>
+</v-app>
+```
   https://blog.minamiland.com/376
   https://chansbro.github.io/vue/vuetify_tutorial1
   http://blog.weirdx.io/post/60376
   https://vuetifyjs.com/ko/styles/spacing/
+
+  

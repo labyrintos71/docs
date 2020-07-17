@@ -29,20 +29,22 @@ Vue에 있어서 컴포넌트는 가장 중요한 개념이라고 생각된다. 
 [Vuetify](https://vuetifyjs.com/ko/)는 Vue.js를 위해 개발된 디자인 프레임워크이다. Material Design Spec을 준수하며 다양한 컴포넌트들로 만들어져 있으므로 필요한 컴포넌트를 가져다 쓰면 쉽게 Material한 서비스를 만들수 있다. 문서에서 전반적으로 사용하며 이 강의도 Vuetify 기준으로 작성 될 것이므로 없으면 꼭 깔도록 하자. [Vue Cli](/vuejs/#vue-cli)
 
 ## Grid System
-그리드 시스템이란, 디자인의 레이아웃에 규칙을 부여하는 수단이라고 하는데 쉽게 말해서 그리드 위에서 디자인 한다고 생각하면 된다.
-![img](/assets/gridsystem.png)
-### Container
-컨텐츠 영역의 가장 큰폭을 나타낸다. (컬럼 + 거터) 
-### Columns
-컨텐츠의 최소 단위다. 보통 12개의 컬럼을 조합하여 12단식으로 많이 사용하며 이는 2, 3, 4, 6의 배수 이기 때문에 반응형에서 쪼개기 좋다.
-### Gutters
-컬럼과 컬럼 사이의 공간이다. 거터는 고정값으로 잡으며 breakpoints를 기준으로 줄이는게 좋다.
-### Margins
-컨테이너 기준으로 좌우 마진을 나타낸다. 
+그리드 시스템이란, 디자인의 레이아웃에 규칙을 부여하는 수단이라고 하는데 쉽게 말해서 그리드 위에서 디자인 한다고 생각하면 된다. 그리드 시스템은 크게 4가지로 볼 수 있는데 아래 그림을 참고하면 된다.
+![img](/assets/img/gridsystem.png)
 
-디자인의 방법론이지만 Vuetify는 반응형을 고려하여 만들어졌기 때문에 그리드 시스템 12단 형식을 사용하고 있다. 관련된 정보는 [vuetifyjs.com/ko/components/grids/에서 확인 가능하다](https://vuetifyjs.com/ko/components/grids/)에서 확인 가능하다
-
-<!-- App.vue -->
+### ① Margins
+초록색 부분에 해당하며, 컨테이너기준 좌우 여백을 말한다.
+### ② Columns
+컨텐츠의 최소 단위다. 컨텐츠를 만들때 컬럼 2개 사이즈, 4개 사이즈, .., 이런식으로 디자인을 한다. 보통 12개의 컬럼을 조합하여 12단식으로 많이 사용하는데 이는 2, 3, 4, 6의 배수 이기 때문에 반응형에서 쪼개기 좋기때문이라고 한다.
+### ③ Gutters
+컬럼과 컬럼 사이의 공간이다. 거터는 고정값으로 잡는게 좋고 일반적으로 20, 24, 30을 많이 사용한다고 한다. 해상도별 대응은 고정값을 유지하되, breakpoints를 기준으로 줄이는게 좋다.
+### ④ (②+③)Container
+컬럼과 거터로 이루어진 영역이다.실제로 컨텐츠가 표시되는 영역 전체를 나타낸다.
+:::tip
+디자인의 방법론이지만 Vuetify는 반응형을 고려하여 만들어졌기 때문에 그리드 시스템 12단 형식을 사용하고 있다. 관련된 정보는 [vuetifyjs.com/ko/components/grids/](https://vuetifyjs.com/ko/components/grids/)에서 확인 가능하다
+:::  
+## Vuetify Boilerplate
+Vuetify를 사용하여 앱을 만들때 기본적으로 사용하는 보일러 플레이트다. Vuetify의 기본적인 요소인 네비게이션 드로워, 앱바, 메인, 푸터가 있으며 필요 없는 부분은 지워서 사용하면 된다.
 ```html
 <v-app>
   <v-navigation-drawer app>
@@ -55,12 +57,10 @@ Vue에 있어서 컴포넌트는 가장 중요한 개념이라고 생각된다. 
 
   <!-- Sizes your content based upon application components -->
   <v-main>
-
     <!-- Provides the application the proper gutter -->
     <v-container fluid>
-
       <!-- If using vue-router -->
-      <router-view></router-view>
+      <router-view/>
     </v-container>
   </v-main>
 
@@ -69,9 +69,3 @@ Vue에 있어서 컴포넌트는 가장 중요한 개념이라고 생각된다. 
   </v-footer>
 </v-app>
 ```
-  https://blog.minamiland.com/376
-  https://chansbro.github.io/vue/vuetify_tutorial1
-  http://blog.weirdx.io/post/60376
-  https://vuetifyjs.com/ko/styles/spacing/
-
-  

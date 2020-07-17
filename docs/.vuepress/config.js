@@ -108,6 +108,10 @@ module.exports = {
         children: [
           '/vuejs/',
           '/vuejs/basic',
+          '/vuejs/layout',
+          '/vuejs/property',
+          '/vuejs/router',
+          '/vuejs/vuex',
           '/vuejs/vuepress',
         ]
       },

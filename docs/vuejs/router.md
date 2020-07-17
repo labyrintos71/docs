@@ -10,18 +10,18 @@ yarn add vue-router
 ```
 
 ### 이동할 컴포넌트 만들기
-이동했을 때 보여주는 컴포넌트 2개를 만들어준다.
+이동했을 때 보여주는 컴포넌트 2개를 만들어준다.  
+`/view/a.vue`
 ```html
-/view/a.vue
-  
 <template>
     <div>
         a page
     </div>
 </template>
 
-/view/b.vue
-  
+```
+`/view/b.vue`
+```html
 <template>
     <div>
         b page
@@ -67,15 +67,15 @@ const router = new VueRouter({
 export default router
 ```
 
-### HTML에서 호출하기
+### Template 에서 호출하기
 `/App.vue`
 ```html
 <router-link to="/">main</router-link>
 <router-link to="/about">news</router-link>
 <router-view></router-view>
 ```
-
 ### Script 에서 호출하기
+`/App.vue`
 ```js
 export default {
   methods: {
@@ -89,4 +89,5 @@ export default {
     }
   }
 };
+//https://router.vuejs.org/kr/guide/
 ```

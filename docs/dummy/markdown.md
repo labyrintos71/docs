@@ -331,3 +331,9 @@ module.exports = {
   }
 }
 ```
+
+### Vuex 구성요소
+* **State** : 컴포넌트 간에 공유하는 `data()`
+* **View** : 데이터를 표시하는 화면 `template`
+* **Mutations** : 사용자의 입력에 따라 데이터를 변경하는 `methods`
+* **Action** : Mutations와 똑같지만 비동기 로직을 처리할 때 쓴다.

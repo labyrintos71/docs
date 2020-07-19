@@ -48,24 +48,24 @@ Vuetify를 사용하여 앱을 만들때 기본적으로 사용하는 보일러 
 ```html
 <v-app>
   <v-navigation-drawer app>
-    <!-- -->
+    <!-- 네비게이션 드로워 -->
   </v-navigation-drawer>
 
   <v-app-bar app>
-    <!-- -->
+    <!-- 앱바 -->
   </v-app-bar>
 
-  <!-- Sizes your content based upon application components -->
+  <!-- 메인 내용 -->
   <v-main>
-    <!-- Provides the application the proper gutter -->
+    <!-- 컨테이너, fluid 는 가능한 최대 크기 사용 -->
     <v-container fluid>
-      <!-- If using vue-router -->
+      <!-- 라우터 뷰 -->
       <router-view/>
     </v-container>
   </v-main>
-
+  
   <v-footer app>
-    <!-- -->
+    <!-- 푸터 -->
   </v-footer>
 </v-app>
 ```

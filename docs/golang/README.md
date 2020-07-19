@@ -7,10 +7,9 @@ Go는 간결하고 신뢰성 있으며 효율적인 소프트웨어를 손쉽게
 :::
 ## Getting Started
 Go는 먼저 SDK랑 IDE가 필요한데 IDE는 여러가지가 많지만 그중에서도 VSCode를 추천한다.
-:::tip Install
-SDK 다운로드 : [golang.org/dl](https://golang.org/dl/)  
+> SDK 다운로드 : [golang.org/dl](https://golang.org/dl/)  
 IDE 다운로드 : [VSCode](https://code.visualstudio.com/Download)
-:::
+
 sdk 를 설치하고 나서 아래 명령어 테스트 해보자. 설치하면 자동으로 환경변수에 등록된다.
 ```sh
 go

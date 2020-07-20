@@ -193,12 +193,10 @@ func (sc *socket) run() {
 <!-- 
 ## 최종 소스코드
 `main.go`
-```go
 package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/url"
 	"time"
@@ -232,7 +230,7 @@ func (sc *socket) init() error {
 	payload := url.URL{Scheme: "wss", Host: "api.upbit.com", Path: "/websocket/v1"}
 	conn, _, err := websocket.DefaultDialer.Dial(payload.String(), nil)
 	if err != nil {
-		fmt.Println(err.Error())
+		log.Println(err.Error())
 		return err
 	}
 	sc.conn = conn
@@ -244,7 +242,7 @@ func (sc *socket) write() {
 	log.Println(payload)
 	err := sc.conn.WriteMessage(websocket.TextMessage, []byte(payload))
 	if err != nil {
-		fmt.Println(err.Error())
+		log.Println(err.Error())
 		return
 	}
 	for range ticker.C {
@@ -268,12 +266,12 @@ func (sc *socket) read() {
 	for {
 		_, res, err := sc.conn.ReadMessage()
 		if err != nil {
-			fmt.Println(err.Error())
+			log.Println(err.Error())
 			return
 		}
 		data := new(Tradedata)
 		if err := json.Unmarshal(res, data); err != nil {
-			fmt.Println(err.Error())
+			log.Println(err.Error())
 			return
 		}
 
@@ -282,7 +280,7 @@ func (sc *socket) read() {
 }
 func (sc *socket) run() {
 	if err := sc.init(); err != nil {
-		fmt.Println(err.Error())
+		log.Println(err.Error())
 		return
 	}
 	go sc.write()
@@ -290,12 +288,11 @@ func (sc *socket) run() {
 }
 
 func testAction(data *Tradedata) {
-	fmt.Println(data)
+	log.Println(data)
 }
 
 func main() {
 	sc := new(socket)
 	sc.run()
 }
-
-``` -->
+-->

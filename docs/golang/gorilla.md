@@ -3,13 +3,13 @@
 ## Gorilla
 [Gorilla](https://www.gorillatoolkit.org/)는 고언어에서 사용할 수 있는 web toolkit 이다. 고릴라에는 여러 기능들이 있지만 그중에 websocket을 이용하여 업비트 실시간 시세를 받아오는 예제를 작성해보려고 한다.
 
-## Create Project & Install
+## 프로젝트 생성
 ```go
 go mod init
 go get github.com/gorilla/websocket
 ```
 
-## 업비트 API 연동하기.
+## 업비트 API 연동하기
 [Websocket을 이용한 업비트 시세 확인하기](https://docs.upbit.com/docs/upbit-quotation-websocket) 업비드 공식 문서를 보면 실시간 체결 데이터에 대한 에제를 아래와 같이 제공하고 있다.
 ```bash
 $ telsocket -url wss://api.upbit.com/websocket/v1
@@ -149,7 +149,7 @@ func (sc *socket) write(params []byte) {
 	//}
 }
 ```
-read 에는 ponghandler를 구현해준다.
+read 에는 PongHandler를 구현해준다.
 ```go
 func (sc *socket) read() {
 	defer func() {
@@ -179,7 +179,7 @@ func (sc *socket) read() {
 	}
 }
 ```
-다 되었다면 마지막으로 sc.write 앞에 `go`를 붙여준다. 이는 고루틴 수식어인데 내가 쓴 문서중 코틀린을 참고하면 이해가 빠를거다. sc.write에서 핑을 위해서 무한 반복문을 돌려놨기에 go를 붙이지 않으면 read를 영영 실행하지 않을거다. 이부분은 따로 나중에 문서를 추가하겠다.
+다 되었다면 마지막으로 sc.write 앞에 `go`를 붙여준다. 이는 고루틴 수식어인데 내가 쓴 문서중 코틀린을 참고하면 이해가 빠를거다. sc.write에서 핑을 위해서 무한 반복문을 돌려놨기에 `go`를 붙이지 않으면 read를 영영 실행하지 않을거다. 이부분은 따로 나중에 문서를 추가하겠다.
 ```go
 func (sc *socket) run() {
 	if err := sc.init(); err != nil {
@@ -190,7 +190,7 @@ func (sc *socket) run() {
 	sc.read()
 }
 ```
-
+<!-- 
 ## 최종 소스코드
 `main.go`
 ```go
@@ -298,4 +298,4 @@ func main() {
 	sc.run()
 }
 
-```
+``` -->

@@ -129,7 +129,7 @@ module.exports = {
         children: [
           '/golang/',
           '/golang/echo',
-          '/golang/wss',
+          '/golang/gorilla',
           '/golang/database',
         ]
       }

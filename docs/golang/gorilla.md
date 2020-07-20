@@ -124,7 +124,11 @@ const (
 ```go
 func (sc *socket) write(params []byte) {
     ticker := time.NewTicker(pingPeriod)
-    
+    defer func() {
+        ticker.stop()
+		sc.conn.Close()
+		log.Println("CLOSE")
+	}()
 	fmt.Println(string(params))
 	err := sc.conn.WriteMessage(websocket.TextMessage, params)
 	if err != nil {
@@ -180,7 +184,7 @@ func (sc *socket) read() {
 	}
 }
 ```
-다 되었다면 마지막으로 sc.write 앞에 `go`를 붙여준다. 이는 고루틴 수식어인데 내가 쓴 문서중 코틀린을 참고하면 이해가 빠를거다. sc.write에서 핑을 위해서 무한 반복문을 돌려놨기에 `go`를 붙이지 않으면 read를 영영 실행하지 않을거다. 이부분은 따로 나중에 고루틴에서 상세하게 다루려고 한다.
+다 되었다면 마지막으로 sc.write 앞에 `go`를 붙여준다. 이는 고루틴 수식어인데 내가 쓴 문서중 코루틴을 참고하면 이해가 빠를거다. sc.write에서 핑을 위해서 무한 반복문을 돌려놨기에 `go`를 붙이지 않으면 read를 영영 실행하지 않을거다. 이부분은 따로 나중에 고루틴에서 상세하게 다루려고 한다.
 ```go
 func (sc *socket) run() {
 	if err := sc.init(); err != nil {
@@ -240,6 +244,11 @@ func (sc *socket) init() error {
 
 func (sc *socket) write() {
 	ticker := time.NewTicker(pingPeriod)
+    defer func() {
+        ticker.stop()
+		sc.conn.Close()
+		log.Println("CLOSE")
+	}()
 	log.Println(payload)
 	err := sc.conn.WriteMessage(websocket.TextMessage, []byte(payload))
 	if err != nil {

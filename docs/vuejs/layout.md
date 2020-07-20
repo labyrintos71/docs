@@ -1,8 +1,9 @@
 # Vuetify layout
+<!-- 
 ```html
 <template>
   <v-navigation-drawer app permanent color="#3c3c3c">
-    <!-- permanent 크기가 줄어도 없어지지 않음-->
+    // permanent 크기가 줄어도 없어지지 않음
     <v-list>
       <v-list-item>
         <v-list-item-avatar>
@@ -63,4 +64,4 @@ export default {
   http://blog.weirdx.io/post/60376
   https://vuetifyjs.com/ko/styles/spacing/
 
-  
+   -->

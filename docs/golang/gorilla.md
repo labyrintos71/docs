@@ -1,7 +1,7 @@
-# Gorilla 를 이용한 WSS 예제
+# Gorilla 를 이용한 WebSocket 연결(Client)
 
 ## Gorilla
-[Gorilla](https://www.gorillatoolkit.org/)는 고언어에서 사용할 수 있는 web toolkit 이다. 고릴라에는 여러 기능들이 있지만 그중에 websocket을 이용하여 업비트 실시간 시세를 받아오는 예제를 작성해보려고 한다.
+[Gorilla](https://www.gorillatoolkit.org/)는 고언어에서 사용할 수 있는 webtoolkit 이다. 고릴라에는 여러 기능들이 있지만 그중에 websocket을 이용하여 업비트 실시간 시세를 받아오는 예제를 구현해보자.
 
 ## 프로젝트 생성
 ```go
@@ -10,7 +10,7 @@ go get github.com/gorilla/websocket
 ```
 
 ## 업비트 API 연동하기
-[Websocket을 이용한 업비트 시세 확인하기](https://docs.upbit.com/docs/upbit-quotation-websocket) 업비드 공식 문서를 보면 실시간 체결 데이터에 대한 에제를 아래와 같이 제공하고 있다.
+[Websocket을 이용한 업비트 시세 확인하기](https://docs.upbit.com/docs/upbit-quotation-websocket) 업비트 공식 문서를 보면 실시간 체결 데이터에 대한 예제를 아래와 같이 제공하고 있다.
 ```bash
 $ telsocket -url wss://api.upbit.com/websocket/v1
 Connected!
@@ -22,7 +22,8 @@ Connected!
 문서를 봐도 나오겠지만 위에 예시를 보면
 1. wss 연결 (init)
 2. 원하는 티커 json 전송 (write)
-3. 데이터 받기 (read)
+3. 데이터 받기 (read)  
+
 순으로 구현하면 될거같다.
 
 구현할 기능을 확인했으니 먼저 main.go를 만들고 그안에 웹소켓과 연결할 socket 구조체를 만들고 기본틀을 만들어보자.
@@ -61,7 +62,7 @@ func (sc *socket) init() error {
 	return nil
 }
 ```
-ticker를 전송하는 부분이다. `WriteMessage`를 이용해서 보낼 수 있는데 바이트 어레이를 보내므로 `[]byte('data')` 이런식으로 데이터를 전송하면 된다.
+ticker를 전송하는 부분이다. `WriteMessage`를 이용해서 보낼 수 있는데 `[]byte`로 보내므로 `[]byte('data')` 이런식으로 데이터를 전송하면 된다.
 ```go
 func (sc *socket) write(params []byte) {
 	fmt.Println(string(params))
@@ -73,7 +74,7 @@ func (sc *socket) write(params []byte) {
 	}
 }
 ```
-데이터를 받는부분이다. 먼저 받을 데이터들을 구조체로 만들어줄건데, json tag를 이용하면 필드 이름을 바꿀수있다.
+데이터를 받는부분이다. 먼저 받을 데이터들을 구조체로 만들어줄건데, `json tag`를 이용하면 필드 이름을 바꿀수있다.
 ```go
 type Tradedata struct {
 	Code           string  `json:"code"`
@@ -109,7 +110,7 @@ func (sc *socket) read() {
 }
 ```
 ## Connection 관리
-위에서 만들은 예제로 켜놓다 보면 중간에 lost connection이 뜨면서 정상적으로 작동 안하는 경우가 생긴다. 이는 업비트 서버에서 120초간 데이터가 수/발신 되지 않으면 연결을 끊어버리기 때문인데 이를 방지하는 방법으로 [WebSocket PING/PONG Frmae](https://tools.ietf.org/html/rfc6455#section-5.5.2)를 제시하고 있다. gorilla chat example을 보고 적용해보았다.  
+위에서 만들은 예제로 켜놓다 보면 중간에 lost connection이 뜨면서 정상적으로 작동 안하는 경우가 생긴다. 이는 업비트 서버에서 120초간 데이터가 수/발신 되지 않으면 연결을 끊어버리기 때문인데 이를 방지하는 방법으로 [WebSocket PING/PONG Frmae](https://tools.ietf.org/html/rfc6455#section-5.5.2)를 제시하고 있다. 위에 작성한 소스코드에 PING/PONG을 넣어보자.
 
 먼저 필요한 상수들을 정의해준다. 공식문서에는 120초 기준으로 써있는데, 실제로는 60초 기준으로 끊어지고 있어서 pongWait를 60초로 정의했다.
 ```go
@@ -179,7 +180,7 @@ func (sc *socket) read() {
 	}
 }
 ```
-다 되었다면 마지막으로 sc.write 앞에 `go`를 붙여준다. 이는 고루틴 수식어인데 내가 쓴 문서중 코틀린을 참고하면 이해가 빠를거다. sc.write에서 핑을 위해서 무한 반복문을 돌려놨기에 `go`를 붙이지 않으면 read를 영영 실행하지 않을거다. 이부분은 따로 나중에 문서를 추가하겠다.
+다 되었다면 마지막으로 sc.write 앞에 `go`를 붙여준다. 이는 고루틴 수식어인데 내가 쓴 문서중 코틀린을 참고하면 이해가 빠를거다. sc.write에서 핑을 위해서 무한 반복문을 돌려놨기에 `go`를 붙이지 않으면 read를 영영 실행하지 않을거다. 이부분은 따로 나중에 고루틴에서 상세하게 다루려고 한다.
 ```go
 func (sc *socket) run() {
 	if err := sc.init(); err != nil {

@@ -44,3 +44,8 @@ vue add vuetify
 yarn serve
 yarn build
 ```
+<!-- 
+vue proxy 
+https://blog.naver.com/PostView.nhn?blogId=psj9102&logNo=221435535795&parentCategoryNo=&categoryNo=44&viewDate=&isShowPopularPosts=false&from=postView
+ https://sollife.tistory.com/18
+ -->

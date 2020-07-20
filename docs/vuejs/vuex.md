@@ -157,7 +157,7 @@ const store = new Vuex.Store({
 ```js
 store.getters.doneTodosCount // -> 1
 ```
-속성으로 접근하는 getter는 Vue의 반응성 시스템의 일부로 캐시된 것임을 유의해야 한다.
+속성으로 접근하는 getter는 Vue의 반응성 시스템의 일부로 캐시된 것이다.
 ```js
 computed: {
   doneTodosCount () {
@@ -168,6 +168,19 @@ computed: {
 
 ### 메소드 유형 접근
 getters에서 함수를 리턴하게 되면 getter에 전달인자를 통해 해당 함수에 인자로 넣어줄수 있다. 보통 저장소의 배열을 검색할 때 좋은데 아래 소스를 보면 이해가 빠르다.
+```js
+getters: {
+  // ...
+  getTodoById: (state) => (id) => {
+    return state.todos.find(todo => todo.id === id)
+  }
+}
+```
+메소드를 통해 접근하는 getter는 호출 할 때마다 실행되며 결과가 캐시되지 않는다.
+```js
+store.getters.getTodoById(2) // -> { id: 2, text: '...', done: false }
+```
+
 
 ## Mutations
 * Mutations의 주요 목적은 state를 변경시키는 역할이다.

@@ -4,7 +4,7 @@
 [Vue](https://kr.vuejs.org/index.html)는 사용자 인터페이스를 만들기 위한 프로그레시브 프레임워크다. 다른 단일형 프레임워크와 달리 Vue는 점진적으로 채택할 수 있도록 설계되어 있다고 한다. 사실 러닝 커브가 가장 낮고 다른 프레임워크와 비교해봤을 때 간편하게 만들 수 있을거 같아서 Vue 부터 스터디 하기로 결정했다.
 
 ## Install
-아래 링크를 이용해서 사용해 볼 수 있지만, 필자는 vue cli를 권장한다. 
+아래 링크를 이용해서 사용할 수 있지만, 필자는 vue cli를 권장한다. 
 ```html
 <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -39,7 +39,7 @@ cd [projectname]
 vue add vuetify
 ```
 
-프로젝트를 생성하고 `yarn serve`하면 http://localhost:8080 에서 확인해 볼 수 있다.
+프로젝트를 생성하고 `yarn serve`하면 http://localhost:8080 에서 확인할 수 있다.
 ```sh
 yarn serve
 yarn build

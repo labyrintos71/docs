@@ -2,7 +2,7 @@
 
 ## VuePress
 
-VuePress 는 Vue 기반으로 만들어진 정적 사이트 생성 엔진이며 자세한 내용은 [vuepress.vuejs.org](https://vuepress.vuejs.org/) 에서 확인해볼수 있다.  
+VuePress 는 Vue 기반으로 만들어진 정적 사이트 생성 엔진이며 자세한 내용은 [vuepress.vuejs.org](https://vuepress.vuejs.org/) 에서 확인할수 있다.  
 여태까지는 [Jekyll](https://jekyllrb-ko.github.io/)를 이용해서 깃허브 블로그를 만들었는데, 뷰 공부하는겸 새로 바꾸기로 했다.  
 
 ## Getting Started
@@ -35,7 +35,7 @@ module.exports = {
     base: '/repo name/'
 }
 ```
-여기까지 세팅을 했으면, 아래 명령어로 로컬에서 확인 해 볼 수 있다.
+여기까지 세팅을 했으면, 아래 명령어로 로컬에서 확인할 수 있다.
 
 ```bash
 yarn

@@ -49,7 +49,7 @@ export default new Vuex.Store({
 ```
 
 ### mapState
-Vuex는 `mapState`헬퍼를 지원해주고 있다. 이는`getter`를 이용해서 코드를 훨씬 간결하게 짤수있게 도와주는데 `getter`는 아래에서 확인해 볼 수 있다.
+Vuex는 `mapState`헬퍼를 지원해주고 있다. 이는`getter`를 이용해서 코드를 훨씬 간결하게 짤수있게 도와주는데 `getter`는 아래에서 확인할 수 있다.
 
 `Child.vue`
 ```html

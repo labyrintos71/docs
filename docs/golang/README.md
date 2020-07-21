@@ -81,7 +81,7 @@ func main(){
     fmt.Println("Hello World")
 }
 ```
-만들었으면 아래 명령어로 확인해 볼 수 있다.
+만들었으면 아래 명령어로 확인할 수 있다.
 ```sh
 go build main.go
 go run main.go

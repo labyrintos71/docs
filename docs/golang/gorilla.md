@@ -104,7 +104,7 @@ func (sc *socket) read() {
 			fmt.Println(err.Error())
 			return
         }
-        // 받은 데이터를 확인해볼수있다.
+        // 받은 데이터를 확인할수있다.
 		fmt.Println(data)
 	}
 }

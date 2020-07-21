@@ -130,7 +130,7 @@ module.exports = {
           '/golang/',
           '/golang/echo',
           '/golang/gorilla',
-          '/golang/database',
+          '/golang/gopg',
         ]
       }
     ]

@@ -1,4 +1,4 @@
-# echo
+# echo를 이용한 RestfulAPI 구현
 
 ## echo
 [echo](https://echo.labstack.com/)는 Go의 웹 프레임 워크다. 공식 홈페이지에서는 아래와 같이 소개하고 있으며 이를 통해 REST API 예제를 구현해보자.
@@ -113,4 +113,58 @@ https://sir.kr/so_golang/7
 
 https://jacking75.github.io/go_webFramework_echo/
 https://m.blog.naver.com/PostView.nhn?blogId=kwonsukmin&logNo=221291451827&proxyReferer=https:%2F%2Fwww.google.com%2F
+
+
+
+
+
+
+
+
+
+
+package main
+
+import (
+	"net/http"
+
+	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
+)
+
+func hellowrold(c echo.Context) error {
+	return c.String(http.StatusOK, "Hello World!")
+}
+
+func getUser(c echo.Context) error {
+	id := c.Param("id")
+	return c.String(http.StatusOK, id)
+}
+
+func listUser(c echo.Context) error {
+	page := c.QueryParam("page")
+	return c.String(http.StatusOK, "page: "+page)
+}
+func login(c echo.Context) error {
+	id := c.FormValue("id")
+	pw := c.FormValue("pw")
+	return c.String(http.StatusOK, "id:"+id+", pw:"+pw)
+}
+func main() {
+	//에코 인스턴스 생성
+	e := echo.New()
+	//미들웨어 선언
+	e.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
+		Format: "${method}[${status}] endpoint : ${uri}, ip: ${remote_ip}\n",
+	}))
+	e.Use(middleware.Recover())
+	//라우팅
+	e.GET("/", hellowrold)
+	e.GET("/users", listUser)
+	e.GET("/users/:id", getUser)
+	e.POST("/login", login)
+
+	// http://localhost:8081/
+	e.Logger.Fatal(e.Start(":8081"))
+}
  -->

@@ -140,7 +140,8 @@ export default {
 };
 </script>
 ```
-이후 `router/index.js`에 가서 위에 items에 넣은 링크에 맞게 라우팅을 잡아주면 된다.  
+## router/index.js
+`router/index.js`에 가서 위에 items에 넣은 링크에 맞게 라우팅을 잡아주면 된다.  
 라우팅에 관한 내용은 [Vue Router](/vuejs/router.html#시작하기)에서 확인할수있다.
 ```js
 const routes = [

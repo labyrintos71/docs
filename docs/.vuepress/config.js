@@ -132,6 +132,14 @@ module.exports = {
           '/golang/gorilla',
           '/golang/gopg',
         ]
+      },
+      {
+        title: 'Tradingview',
+        collapsable: false,
+        children: [
+          '/tradingview/',
+          '/tradingview/udf',
+        ]
       }
     ]
     // sidebar: {

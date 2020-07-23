@@ -78,7 +78,64 @@ GET /time
 GET /quotes?symbols=<ticker_name_1>,<ticker_name_2>,...,<ticker_name_n>
 ```
 ## GET /symbol_info
+Symbol group request  
+supports_group_request: true && supports_search: false
 ## GET /symbols
+Symbol resolve  
+supports_group_request: false && supports_search: true
+
+### Request
+`/symbols?symbol=<symbol>`
+| Key    | Type   | Desc                       |
+| :----- |:------ | :------------------------- |
+| symbol | String | 심볼 이름 (BTCUSDT, ETHBTC) |
+Example: GET /symbols?symbol=AAL, GET /symbols?symbol=NYSE:MSFT
+### Response
+| Key           | Type          | Desc  |
+| :------------- |:-------------| :-----|
+| exchanges     | [String value, String name, String desc] | 차트에서 지원하는 거래소|
+| symbols_types | [String value, String name] | 심볼 종류(BTC, KRW, USDT) |
+```js
+{
+   "symbol":"ETHBTC",
+   "name":"ETHBTC",
+   "ticker":"ETHBTC",
+   "description":"ETH / BTC",
+   "type":"crypto",
+   "session":"24x7",
+   "full_name":"ETHBTC",
+   "exchange":"BINANCE",
+   "listed_exchange":"BINANCE",
+   "currency_code":"BTC",
+   "timezone":"UTC",
+   "minmovement":1,
+   "minmov":1,
+   "minmovement2":0,
+   "minmov2":0,
+   "pricescale":1000000,
+   "supported_resolutions":[
+      "1",
+      "3",
+      "5",
+      "15",
+      "30",
+      "60",
+      "120",
+      "240",
+      "360",
+      "480",
+      "720",
+      "1D",
+      "3D",
+      "1W",
+      "1M"
+   ],
+   "has_intraday":true,
+   "has_daily":true,
+   "has_weekly_and_monthly":true,
+   "data_status":"streaming"
+}
+```
 ## GET /search
 ## GET /history
 ## GET /marks

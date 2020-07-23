@@ -1,6 +1,6 @@
 # Vuetify property
 
-Vuetify에서 대부분 공통적으로 사용하는 propert들이다.
+Vuetify에서 대부분 공통적으로 사용하는 property들이다.
 
 ## dark / light
 dark와 light는 component 단위에 theme를 설정하는 property이다.

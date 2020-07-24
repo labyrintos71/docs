@@ -1,16 +1,15 @@
 ## name
-It's the name of the symbol. It is a string that your users will be able to see. Also, it will be used for data requests if you are not using tickers.
+심볼의 이름이다. 만약 ticker를 사용하지 않는다면 이 이름을 사용하게 된다.
 
 ## ticker
+심볼의 유니크 키다.
 It's an unique identifier for this particular symbol in your symbology. If you specify this property then its value will be used for all data requests for this symbol. ticker will be treated the same as name if not specified explicitly.
 
 ## description
-Description of a symbol. Will be displayed in the chart legend for this symbol.
+레전드의 표시되는 심볼의 설명이다.
 
 ## type
-Optional type of the instrument.
-
-Possible types are:
+해당 상품의 타입이다.
 
 stock
 index
@@ -20,19 +19,18 @@ bitcoin
 expression
 spread
 cfd
-or another string value.
+.. 혹은 String 벨류 사용 가능.
 ## session
-Trading hours for this symbol. See the Trading Sessions article to learn more details.
+해당 심볼의 거래 시간이다. 자세한 내용은 [여기](https://github.com/tradingview/charting_library/wiki/Trading-Sessions)
 
 ## holidays
-List of holidays for this symbol. These dates are not displayed on the chart. It's a string in the following format:
-
+심볼 거래 안하는날 날짜 표시다.
 YYYYMMDD[,YYYYMMDD].
 
 Example: 20181105,20181107,20181112.
 
 ## corrections
-List of corrections for this symbol. Corrections are days with specific trading sessions. They can be applied to holidays as well. It's a string in the following format:
+심볼의 거래 조정 기간이다. 휴일이랑 비슷한거같은데 쓸일 없을듯 하다.
 
 SESSION:YYYYMMDD[,YYYYMMDD][;SESSION:YYYYMMDD[,YYYYMMDD]].
 
@@ -41,9 +39,7 @@ Where SESSION has the same format as Trading Sessions.
 Example: 1900F4-2350F4,1000-1845:20181113;1000-1400:20181114.
 
 ## exchange, listed_exchange
-Both of these fields are expected to have a short name of the exchange where this symbol is traded.
-
-The name will be displayed in the chart legend for this symbol.
+심볼이 거래되는 거래소 이름을 나타낸다.
 
 ## timezone
 거래소에서 사용하는 표준 시간대. olsondb  포맷으로 사용한다.  

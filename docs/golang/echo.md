@@ -116,7 +116,7 @@ https://m.blog.naver.com/PostView.nhn?blogId=kwonsukmin&logNo=221291451827&proxy
 
 
 
-
+https://golang.hotexamples.com/examples/github.com.labstack.echo/Echo/Favicon/golang-echo-favicon-method-examples.html
 
 
 

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kotlin 문법 - 클래스 &amp; 오브젝트 | Labyrintos71&#39;s Docs</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="docs with vuepress">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.156e236d.css" as="style"><link rel="preload" href="/docs/assets/js/app.9ec738af.js" as="script"><link rel="preload" href="/docs/assets/js/2.8740eb56.js" as="script"><link rel="preload" href="/docs/assets/js/36.76eaa128.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.cb90e021.js"><link rel="prefetch" href="/docs/assets/js/11.52006c39.js"><link rel="prefetch" href="/docs/assets/js/12.2f6fda33.js"><link rel="prefetch" href="/docs/assets/js/13.5dba7c13.js"><link rel="prefetch" href="/docs/assets/js/14.a6f1d96e.js"><link rel="prefetch" href="/docs/assets/js/15.42009d6e.js"><link rel="prefetch" href="/docs/assets/js/16.09dcdbac.js"><link rel="prefetch" href="/docs/assets/js/17.283ab3b0.js"><link rel="prefetch" href="/docs/assets/js/18.d3f3cd4a.js"><link rel="prefetch" href="/docs/assets/js/19.c5f4545b.js"><link rel="prefetch" href="/docs/assets/js/20.569c758a.js"><link rel="prefetch" href="/docs/assets/js/21.f209c001.js"><link rel="prefetch" href="/docs/assets/js/22.c8313833.js"><link rel="prefetch" href="/docs/assets/js/23.1da64bbd.js"><link rel="prefetch" href="/docs/assets/js/24.a70523e5.js"><link rel="prefetch" href="/docs/assets/js/25.a1dc5394.js"><link rel="prefetch" href="/docs/assets/js/26.05cb28ee.js"><link rel="prefetch" href="/docs/assets/js/27.f0605b54.js"><link rel="prefetch" href="/docs/assets/js/28.0063dc56.js"><link rel="prefetch" href="/docs/assets/js/29.0c5a26b7.js"><link rel="prefetch" href="/docs/assets/js/3.687b939c.js"><link rel="prefetch" href="/docs/assets/js/30.e5f8cab6.js"><link rel="prefetch" href="/docs/assets/js/31.873dd8da.js"><link rel="prefetch" href="/docs/assets/js/32.c1ad188c.js"><link rel="prefetch" href="/docs/assets/js/33.6c831e82.js"><link rel="prefetch" href="/docs/assets/js/34.26ae6b14.js"><link rel="prefetch" href="/docs/assets/js/35.fdd56b3b.js"><link rel="prefetch" href="/docs/assets/js/37.7b8b842b.js"><link rel="prefetch" href="/docs/assets/js/38.77a6b056.js"><link rel="prefetch" href="/docs/assets/js/39.d376624a.js"><link rel="prefetch" href="/docs/assets/js/4.66cf2b18.js"><link rel="prefetch" href="/docs/assets/js/40.9a19af1f.js"><link rel="prefetch" href="/docs/assets/js/41.d90bfe99.js"><link rel="prefetch" href="/docs/assets/js/42.06ed4f23.js"><link rel="prefetch" href="/docs/assets/js/43.5fcd743c.js"><link rel="prefetch" href="/docs/assets/js/44.c48a474c.js"><link rel="prefetch" href="/docs/assets/js/45.584bdafe.js"><link rel="prefetch" href="/docs/assets/js/46.dc254832.js"><link rel="prefetch" href="/docs/assets/js/47.6de23ee5.js"><link rel="prefetch" href="/docs/assets/js/48.8a708e85.js"><link rel="prefetch" href="/docs/assets/js/49.a4b1600d.js"><link rel="prefetch" href="/docs/assets/js/5.729974e5.js"><link rel="prefetch" href="/docs/assets/js/50.7c83830e.js"><link rel="prefetch" href="/docs/assets/js/51.58708a54.js"><link rel="prefetch" href="/docs/assets/js/52.eeaf96a9.js"><link rel="prefetch" href="/docs/assets/js/53.f3de5963.js"><link rel="prefetch" href="/docs/assets/js/6.aa72b1f7.js"><link rel="prefetch" href="/docs/assets/js/7.13287087.js"><link rel="prefetch" href="/docs/assets/js/8.5f2eb7f7.js"><link rel="prefetch" href="/docs/assets/js/9.18840fa1.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.156e236d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">Labyrintos71's Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/kotlin/" class="nav-link router-link-active">
+  Kotlin
+</a></div><div class="nav-item"><a href="/docs/android/" class="nav-link">
+  Android
+</a></div><div class="nav-item"><a href="/docs/flutter/" class="nav-link">
+  Flutter
+</a></div><div class="nav-item"><a href="/docs/nodejs/" class="nav-link">
+  NodeJS
+</a></div><div class="nav-item"><a href="/docs/vuejs/" class="nav-link">
+  VueJS
+</a></div><div class="nav-item"><a href="/docs/electron/" class="nav-link">
+  Electron
+</a></div><div class="nav-item"><a href="/docs/golang/" class="nav-link">
+  Golang
+</a></div><div class="nav-item"><a href="https://github.com/labyrintos71/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/kotlin/" class="nav-link router-link-active">
+  Kotlin
+</a></div><div class="nav-item"><a href="/docs/android/" class="nav-link">
+  Android
+</a></div><div class="nav-item"><a href="/docs/flutter/" class="nav-link">
+  Flutter
+</a></div><div class="nav-item"><a href="/docs/nodejs/" class="nav-link">
+  NodeJS
+</a></div><div class="nav-item"><a href="/docs/vuejs/" class="nav-link">
+  VueJS
+</a></div><div class="nav-item"><a href="/docs/electron/" class="nav-link">
+  Electron
+</a></div><div class="nav-item"><a href="/docs/golang/" class="nav-link">
+  Golang
+</a></div><div class="nav-item"><a href="https://github.com/labyrintos71/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Kotlin</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/kotlin/" aria-current="page" class="sidebar-link">시작하기</a></li><li><a href="/docs/kotlin/variable.html" class="sidebar-link">Kotlin 문법 - 변수</a></li><li><a href="/docs/kotlin/ifwhen.html" class="sidebar-link">Kotlin 문법 - 제어흐름</a></li><li><a href="/docs/kotlin/classobject.html" aria-current="page" class="active sidebar-link">Kotlin 문법 - 클래스 &amp; 오브젝트</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/kotlin/classobject.html#클래스" class="sidebar-link">클래스</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/classobject.html#생성자" class="sidebar-link">생성자</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/classobject.html#data-class" class="sidebar-link">data class</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/classobject.html#data-class-destructuring" class="sidebar-link">data class destructuring</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/classobject.html#인자값-전달" class="sidebar-link">인자값 전달</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/classobject.html#object" class="sidebar-link">Object</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/classobject.html#companion-object-동반자-객체" class="sidebar-link">Companion object, 동반자 객체</a></li></ul></li><li><a href="/docs/kotlin/function.html" class="sidebar-link">Kotlin 문법 - 함수</a></li><li><a href="/docs/kotlin/extensionfunction.html" class="sidebar-link">Kotlin 문법 - 범위지정함수</a></li><li><a href="/docs/kotlin/delegation.html" class="sidebar-link">Kotlin 문법 - 위임</a></li><li><a href="/docs/kotlin/selenium.html" class="sidebar-link">Selenium</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Coroutine</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flutter</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>NodeJS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>VueJS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Electron</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Golang</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Tradingview</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/tradingview/" class="sidebar-link">시작하기</a></li><li><a href="/docs/tradingview/udf.html" class="sidebar-link">UDF-Reference</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="kotlin-문법-클래스-오브젝트"><a href="#kotlin-문법-클래스-오브젝트" class="header-anchor">#</a> Kotlin 문법 - 클래스 &amp; 오브젝트</h1> <h2 id="클래스"><a href="#클래스" class="header-anchor">#</a> 클래스</h2> <h2 id="생성자"><a href="#생성자" class="header-anchor">#</a> 생성자</h2> <p>코틀린에서는 훨씬 적은 코드로 초기화를 할 수 있는 문법을 제공한다.<br>
+클래스의 본문도 작성할 필요도 없다. 클래스 초기화는 다음과 같다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token comment">// constructor는 생략 가능하다.</span>
+<span class="token keyword">class</span> Student <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token keyword">var</span> num<span class="token operator">:</span> Int<span class="token punctuation">,</span> <span class="token keyword">var</span> name<span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">&quot;sheldon&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment">//name 처럼 생성자의 기본값도 설정할 수 있다.</span>
+<span class="token keyword">class</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token keyword">var</span> num<span class="token operator">:</span> Int<span class="token punctuation">,</span> <span class="token keyword">var</span> name<span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">&quot;sheldon&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment">//기본값이 명시된 생성자는 생략할 수 있다.</span>
+<span class="token keyword">fun</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> amy <span class="token operator">=</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment">// name엔 sheldon 자동으로 들어간다.</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token keyword">var</span> num<span class="token operator">:</span> Int<span class="token punctuation">,</span> <span class="token keyword">var</span> name<span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">&quot;sheldon&quot;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token comment">//기존 생성자에서 처리하던 일은 init 메소드에서 처리하면 된다.</span>
+    <span class="token keyword">init</span><span class="token punctuation">{</span>
+        <span class="token comment">//해야할 일</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//this 키워드를 이용하면 다른생성자를 호출할 수 있다.</span>
+    <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token keyword">var</span> num<span class="token operator">:</span> Int<span class="token punctuation">,</span> <span class="token keyword">var</span> name<span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">&quot;sheldon&quot;</span><span class="token punctuation">,</span> <span class="token keyword">var</span> info<span class="token operator">:</span> Int<span class="token punctuation">)</span> 
+        <span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="data-class"><a href="#data-class" class="header-anchor">#</a> data class</h2> <p>이름 그대로 data를 보유하기만 하는 class 이다.
+생성은 아래와 같이 한다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">constest</span><span class="token punctuation">(</span>a<span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> b<span class="token operator">:</span> Double <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">,</span> c<span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">&quot;default&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><p>데이터 클래스는 기본적으로 다음과 같은 기능들을 제공하고 있다.<br>
+equals()<br>
+hashCode()<br>
+copy()<br>
+toString()<br>
+componentsN()</p> <h2 id="data-class-destructuring"><a href="#data-class-destructuring" class="header-anchor">#</a> data class destructuring</h2> <p>destructuring은 data class에서 제공해주는 기능중 하나이다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">fun</span> <span class="token function">desttest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> user <span class="token operator">=</span> <span class="token function">Test</span><span class="token punctuation">(</span><span class="token string">&quot;labyrintos71&quot;</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">)</span>
+    <span class="token keyword">var</span> <span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token operator">=</span> user
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;user name : <span class="token interpolation variable">$name</span>, user age : <span class="token interpolation variable">$age</span>&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">Test</span><span class="token punctuation">(</span><span class="token keyword">var</span> name<span class="token operator">:</span> String<span class="token punctuation">,</span> <span class="token keyword">var</span> age<span class="token operator">:</span>Int<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><p>이 중 아래와 같은 부분을 destructuring 이다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">var</span> <span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token operator">=</span> user
+
+<span class="token comment">// 이렇게도 사용 가능하다.</span>
+<span class="token keyword">var</span> name <span class="token operator">=</span> user<span class="token punctuation">.</span><span class="token function">component1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> age <span class="token operator">=</span> user<span class="token punctuation">.</span><span class="token function">component2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// for문에도 사용 가능하다.</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token keyword">in</span> collection <span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">..</span><span class="token punctuation">.</span> <span class="token punctuation">}</span>
+</code></pre></div><h2 id="인자값-전달"><a href="#인자값-전달" class="header-anchor">#</a> 인자값 전달</h2> <p>기본값이 명시되있는 경우 그 값은 생략 할 수 있다. 아래 예제를 보도록 하자.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">fun</span> <span class="token function">example</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//한번 변수를 명해주면 뒤에는 전부 명명해줘야된다</span>
+    <span class="token function">constest</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">0.1</span><span class="token punctuation">)</span>
+    <span class="token function">constest</span><span class="token punctuation">(</span>a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> b <span class="token operator">=</span> <span class="token number">0.1</span><span class="token punctuation">)</span>
+    <span class="token function">constest</span><span class="token punctuation">(</span>a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span>      <span class="token comment">//에러</span>
+    <span class="token function">constest</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;123&quot;</span><span class="token punctuation">)</span>        <span class="token comment">//에러</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">data</span> <span class="token keyword">class</span> <span class="token function">constest</span><span class="token punctuation">(</span>a<span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> b<span class="token operator">:</span> Double <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">,</span> c<span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">&quot;default&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="object"><a href="#object" class="header-anchor">#</a> Object</h2> <p>객체지향에서 객체는 일반적으로 클래스를 정의하고 생성자를 통해 객체를 찍어낸다.<br>
+하지만 object를 이용하면 그러지 않아도 생성할 수 있다.<br>
+class 대신 object 키워드를 사용하면, 뒤에 정의되는 내용은<br>
+클래스가 아니라 객체 그자체, 인스턴스가 된다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token comment">//아래처럼 싱글톤으로 사용 가능하다</span>
+<span class="token keyword">fun</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> a <span class="token operator">=</span> Foo     <span class="token comment">// Init !</span>
+    <span class="token keyword">var</span> b <span class="token operator">=</span> Foo     <span class="token comment">//</span>
+    Foo<span class="token punctuation">.</span><span class="token function">callFoo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">//Foo 2030562336</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">object</span> Foo <span class="token punctuation">{</span>
+    <span class="token keyword">init</span> <span class="token punctuation">{</span> <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Init !&quot;</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+    <span class="token keyword">fun</span> <span class="token function">callFoo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Foo &quot;</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token string">&quot;foo&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="companion-object-동반자-객체"><a href="#companion-object-동반자-객체" class="header-anchor">#</a> Companion object, 동반자 객체</h2> <p>코틀린에는 static이 없는대신 동반자 객체가 있다.<br>
+이를 이용하면 기존 static 처럼 사용할 수 있다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">fun</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> a <span class="token operator">=</span> <span class="token function">tester</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">testfun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//init  testfun875827115</span>
+    <span class="token keyword">val</span> b <span class="token operator">=</span> <span class="token function">tester</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">testfun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//init  testfun787387795</span>
+    tester<span class="token punctuation">.</span><span class="token function">callFoo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>           <span class="token comment">//Foo 2030562336</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> tester <span class="token punctuation">{</span>
+    <span class="token keyword">init</span> <span class="token punctuation">{</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;init&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">fun</span> <span class="token function">testfun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;testfun&quot;</span> <span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token punctuation">}</span>
+   <span class="token keyword">companion</span> <span class="token keyword">object</span> Foo <span class="token punctuation">{</span>
+        <span class="token keyword">fun</span> <span class="token function">callFoo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Foo &quot;</span><span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token string">&quot;foo&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/kotlin/ifwhen.html" class="prev">
+        Kotlin 문법 - 제어흐름
+      </a></span> <span class="next"><a href="/docs/kotlin/function.html">
+        Kotlin 문법 - 함수
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docs/assets/js/app.9ec738af.js" defer></script><script src="/docs/assets/js/2.8740eb56.js" defer></script><script src="/docs/assets/js/36.76eaa128.js" defer></script>
+  </body>
+</html>

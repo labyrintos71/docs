@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Gorilla 를 이용한 WebSocket 연결(Client) | Labyrintos71&#39;s Docs</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="docs with vuepress">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.156e236d.css" as="style"><link rel="preload" href="/docs/assets/js/app.9ec738af.js" as="script"><link rel="preload" href="/docs/assets/js/2.8740eb56.js" as="script"><link rel="preload" href="/docs/assets/js/33.6c831e82.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.cb90e021.js"><link rel="prefetch" href="/docs/assets/js/11.52006c39.js"><link rel="prefetch" href="/docs/assets/js/12.2f6fda33.js"><link rel="prefetch" href="/docs/assets/js/13.5dba7c13.js"><link rel="prefetch" href="/docs/assets/js/14.a6f1d96e.js"><link rel="prefetch" href="/docs/assets/js/15.42009d6e.js"><link rel="prefetch" href="/docs/assets/js/16.09dcdbac.js"><link rel="prefetch" href="/docs/assets/js/17.283ab3b0.js"><link rel="prefetch" href="/docs/assets/js/18.d3f3cd4a.js"><link rel="prefetch" href="/docs/assets/js/19.c5f4545b.js"><link rel="prefetch" href="/docs/assets/js/20.569c758a.js"><link rel="prefetch" href="/docs/assets/js/21.f209c001.js"><link rel="prefetch" href="/docs/assets/js/22.c8313833.js"><link rel="prefetch" href="/docs/assets/js/23.1da64bbd.js"><link rel="prefetch" href="/docs/assets/js/24.a70523e5.js"><link rel="prefetch" href="/docs/assets/js/25.a1dc5394.js"><link rel="prefetch" href="/docs/assets/js/26.05cb28ee.js"><link rel="prefetch" href="/docs/assets/js/27.f0605b54.js"><link rel="prefetch" href="/docs/assets/js/28.0063dc56.js"><link rel="prefetch" href="/docs/assets/js/29.0c5a26b7.js"><link rel="prefetch" href="/docs/assets/js/3.687b939c.js"><link rel="prefetch" href="/docs/assets/js/30.e5f8cab6.js"><link rel="prefetch" href="/docs/assets/js/31.873dd8da.js"><link rel="prefetch" href="/docs/assets/js/32.c1ad188c.js"><link rel="prefetch" href="/docs/assets/js/34.26ae6b14.js"><link rel="prefetch" href="/docs/assets/js/35.fdd56b3b.js"><link rel="prefetch" href="/docs/assets/js/36.76eaa128.js"><link rel="prefetch" href="/docs/assets/js/37.7b8b842b.js"><link rel="prefetch" href="/docs/assets/js/38.77a6b056.js"><link rel="prefetch" href="/docs/assets/js/39.d376624a.js"><link rel="prefetch" href="/docs/assets/js/4.66cf2b18.js"><link rel="prefetch" href="/docs/assets/js/40.9a19af1f.js"><link rel="prefetch" href="/docs/assets/js/41.d90bfe99.js"><link rel="prefetch" href="/docs/assets/js/42.06ed4f23.js"><link rel="prefetch" href="/docs/assets/js/43.5fcd743c.js"><link rel="prefetch" href="/docs/assets/js/44.c48a474c.js"><link rel="prefetch" href="/docs/assets/js/45.584bdafe.js"><link rel="prefetch" href="/docs/assets/js/46.dc254832.js"><link rel="prefetch" href="/docs/assets/js/47.6de23ee5.js"><link rel="prefetch" href="/docs/assets/js/48.8a708e85.js"><link rel="prefetch" href="/docs/assets/js/49.a4b1600d.js"><link rel="prefetch" href="/docs/assets/js/5.729974e5.js"><link rel="prefetch" href="/docs/assets/js/50.7c83830e.js"><link rel="prefetch" href="/docs/assets/js/51.58708a54.js"><link rel="prefetch" href="/docs/assets/js/52.eeaf96a9.js"><link rel="prefetch" href="/docs/assets/js/53.f3de5963.js"><link rel="prefetch" href="/docs/assets/js/6.aa72b1f7.js"><link rel="prefetch" href="/docs/assets/js/7.13287087.js"><link rel="prefetch" href="/docs/assets/js/8.5f2eb7f7.js"><link rel="prefetch" href="/docs/assets/js/9.18840fa1.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.156e236d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">Labyrintos71's Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/kotlin/" class="nav-link">
+  Kotlin
+</a></div><div class="nav-item"><a href="/docs/android/" class="nav-link">
+  Android
+</a></div><div class="nav-item"><a href="/docs/flutter/" class="nav-link">
+  Flutter
+</a></div><div class="nav-item"><a href="/docs/nodejs/" class="nav-link">
+  NodeJS
+</a></div><div class="nav-item"><a href="/docs/vuejs/" class="nav-link">
+  VueJS
+</a></div><div class="nav-item"><a href="/docs/electron/" class="nav-link">
+  Electron
+</a></div><div class="nav-item"><a href="/docs/golang/" class="nav-link router-link-active">
+  Golang
+</a></div><div class="nav-item"><a href="https://github.com/labyrintos71/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/kotlin/" class="nav-link">
+  Kotlin
+</a></div><div class="nav-item"><a href="/docs/android/" class="nav-link">
+  Android
+</a></div><div class="nav-item"><a href="/docs/flutter/" class="nav-link">
+  Flutter
+</a></div><div class="nav-item"><a href="/docs/nodejs/" class="nav-link">
+  NodeJS
+</a></div><div class="nav-item"><a href="/docs/vuejs/" class="nav-link">
+  VueJS
+</a></div><div class="nav-item"><a href="/docs/electron/" class="nav-link">
+  Electron
+</a></div><div class="nav-item"><a href="/docs/golang/" class="nav-link router-link-active">
+  Golang
+</a></div><div class="nav-item"><a href="https://github.com/labyrintos71/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Kotlin</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Coroutine</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flutter</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>NodeJS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>VueJS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Electron</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Golang</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/golang/" aria-current="page" class="sidebar-link">시작하기</a></li><li><a href="/docs/golang/echo.html" class="sidebar-link">echo를 이용한 RestfulAPI 구현</a></li><li><a href="/docs/golang/gorilla.html" aria-current="page" class="active sidebar-link">Gorilla 를 이용한 WebSocket 연결(Client)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/golang/gorilla.html#gorilla" class="sidebar-link">Gorilla</a></li><li class="sidebar-sub-header"><a href="/docs/golang/gorilla.html#프로젝트-생성" class="sidebar-link">프로젝트 생성</a></li><li class="sidebar-sub-header"><a href="/docs/golang/gorilla.html#업비트-api-연동하기" class="sidebar-link">업비트 API 연동하기</a></li><li class="sidebar-sub-header"><a href="/docs/golang/gorilla.html#connection-관리" class="sidebar-link">Connection 관리</a></li></ul></li><li><a href="/docs/golang/gopg.html" class="sidebar-link">gopg를 이용한 DB CRUD 구현</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Tradingview</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/tradingview/" class="sidebar-link">시작하기</a></li><li><a href="/docs/tradingview/udf.html" class="sidebar-link">UDF-Reference</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="gorilla-를-이용한-websocket-연결-client"><a href="#gorilla-를-이용한-websocket-연결-client" class="header-anchor">#</a> Gorilla 를 이용한 WebSocket 연결(Client)</h1> <h2 id="gorilla"><a href="#gorilla" class="header-anchor">#</a> Gorilla</h2> <p><a href="https://www.gorillatoolkit.org/" target="_blank" rel="noopener noreferrer">Gorilla<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>는 고언어에서 사용할 수 있는 webtoolkit 이다. 고릴라에는 여러 기능들이 있지만 그중에 websocket을 이용하여 업비트 실시간 시세를 받아오는 예제를 구현해보자.</p> <h2 id="프로젝트-생성"><a href="#프로젝트-생성" class="header-anchor">#</a> 프로젝트 생성</h2> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">go</span> mod init
+<span class="token keyword">go</span> get github<span class="token punctuation">.</span>com<span class="token operator">/</span>gorilla<span class="token operator">/</span>websocket
+</code></pre></div><h2 id="업비트-api-연동하기"><a href="#업비트-api-연동하기" class="header-anchor">#</a> 업비트 API 연동하기</h2> <p><a href="https://docs.upbit.com/docs/upbit-quotation-websocket" target="_blank" rel="noopener noreferrer">Websocket을 이용한 업비트 시세 확인하기<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 업비트 공식 문서를 보면 실시간 체결 데이터에 대한 예제를 아래와 같이 제공하고 있다.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ telsocket -url wss://api.upbit.com/websocket/v1
+Connected<span class="token operator">!</span>
+<span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">&quot;ticket&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;test&quot;</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span><span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;ticker&quot;</span>,<span class="token string">&quot;codes&quot;</span>:<span class="token punctuation">[</span><span class="token string">&quot;KRW-BTC&quot;</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token punctuation">{</span><span class="token string">&quot;market&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;KRW-BTC&quot;</span>,<span class="token punctuation">..</span>.<span class="token string">&quot;acc_trade_volume_24h&quot;</span>:6448.96200341<span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token string">&quot;market&quot;</span><span class="token builtin class-name">:</span><span class="token string">&quot;KRW-BTC&quot;</span>,<span class="token punctuation">..</span>.<span class="token string">&quot;acc_trade_volume_24h&quot;</span>:6448.96200341<span class="token punctuation">}</span>
+<span class="token punctuation">..</span>.
+</code></pre></div><p>문서를 봐도 나오겠지만 위에 예시를 보면</p> <ol><li>wss 연결 (init)</li> <li>원하는 티커 json 전송 (write)</li> <li>데이터 받기 (read)</li></ol> <p>순으로 구현하면 될거같다.</p> <p>구현할 기능을 확인했으니 먼저 main.go를 만들고 그안에 웹소켓과 연결할 socket 구조체를 만들고 기본틀을 만들어보자.</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// 커넥션을 담고 있을 구조체</span>
+<span class="token keyword">type</span> socket <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	conn <span class="token operator">*</span>websocket<span class="token punctuation">.</span>Conn
+<span class="token punctuation">}</span>
+<span class="token comment">//웹소켓을 연결하고 오류가 있으면 종료, 성공하면 티커를 보내고 데이터를 받는다.</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>sc <span class="token operator">*</span>socket<span class="token punctuation">)</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> err <span class="token operator">:=</span> sc<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	sc<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">&quot;ticket&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;test&quot;</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span><span class="token string">&quot;ticker&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;codes&quot;</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">&quot;KRW-BTC&quot;</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+	sc<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	sc <span class="token operator">:=</span> <span class="token function">new</span><span class="token punctuation">(</span>socket<span class="token punctuation">)</span>
+	sc<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>이제 여기서 하나씩 내용물을 구현해 나가면된다. 먼저 init인데 웹소켓 연결은 아래처럼 하면 된다.</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>sc <span class="token operator">*</span>socket<span class="token punctuation">)</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
+	payload <span class="token operator">:=</span> url<span class="token punctuation">.</span>URL<span class="token punctuation">{</span>Scheme<span class="token punctuation">:</span> <span class="token string">&quot;wss&quot;</span><span class="token punctuation">,</span> Host<span class="token punctuation">:</span> <span class="token string">&quot;api.upbit.com&quot;</span><span class="token punctuation">,</span> Path<span class="token punctuation">:</span> <span class="token string">&quot;/websocket/v1&quot;</span><span class="token punctuation">}</span>
+	conn<span class="token punctuation">,</span> <span class="token boolean">_</span><span class="token punctuation">,</span> err <span class="token operator">:=</span> websocket<span class="token punctuation">.</span>DefaultDialer<span class="token punctuation">.</span><span class="token function">Dial</span><span class="token punctuation">(</span>payload<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">nil</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span> err
+	<span class="token punctuation">}</span>
+	sc<span class="token punctuation">.</span>conn <span class="token operator">=</span> conn
+	<span class="token keyword">return</span> <span class="token boolean">nil</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>ticker를 전송하는 부분이다. <code>WriteMessage</code>를 이용해서 보낼 수 있는데 <code>[]byte</code>로 보내므로 <code>[]byte('data')</code> 이런식으로 데이터를 전송하면 된다.</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>sc <span class="token operator">*</span>socket<span class="token punctuation">)</span> <span class="token function">write</span><span class="token punctuation">(</span>params <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	err <span class="token operator">:=</span> sc<span class="token punctuation">.</span>conn<span class="token punctuation">.</span><span class="token function">WriteMessage</span><span class="token punctuation">(</span>websocket<span class="token punctuation">.</span>TextMessage<span class="token punctuation">,</span> params<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span>
+
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>데이터를 받는부분이다. 먼저 받을 데이터들을 구조체로 만들어줄건데, <code>json tag</code>를 이용하면 필드 이름을 바꿀수있다.</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">type</span> Tradedata <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	Code           <span class="token builtin">string</span>  <span class="token string">`json:&quot;code&quot;`</span>
+	AskBid         <span class="token builtin">string</span>  <span class="token string">`json:&quot;ask_bid&quot;`</span>
+	TradePrice     <span class="token builtin">float64</span> <span class="token string">`json:&quot;trade_price&quot;`</span>
+	TradeVolume    <span class="token builtin">float64</span> <span class="token string">`json:&quot;trade_volume&quot;`</span>
+	SequentialID   <span class="token builtin">int64</span>   <span class="token string">`json:&quot;sequential_id&quot;`</span>
+	Timestamp      <span class="token builtin">int64</span>   <span class="token string">`json:&quot;timestamp&quot;`</span>
+	TradeTimestamp <span class="token builtin">int64</span>   <span class="token string">`json:&quot;trade_timestamp&quot;`</span>
+	StreamType     <span class="token builtin">string</span>  <span class="token string">`json:&quot;stream_type&quot;`</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>데이터를 계속 받아오므로 때문에 for 를 이용해서 계속 메세지를 읽어오고 읽어온 데이터는 <code>json.Unmarshal</code>를 사용해 JSON형식으로 바꿔준다.</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>sc <span class="token operator">*</span>socket<span class="token punctuation">)</span> <span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		sc<span class="token punctuation">.</span>conn<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">for</span> <span class="token punctuation">{</span>
+		<span class="token boolean">_</span><span class="token punctuation">,</span> res<span class="token punctuation">,</span> err <span class="token operator">:=</span> sc<span class="token punctuation">.</span>conn<span class="token punctuation">.</span><span class="token function">ReadMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+			<span class="token keyword">return</span>
+		<span class="token punctuation">}</span>
+		data <span class="token operator">:=</span> <span class="token function">new</span><span class="token punctuation">(</span>Tradedata<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">:=</span> json<span class="token punctuation">.</span><span class="token function">Unmarshal</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+			<span class="token keyword">return</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 받은 데이터를 확인할수있다.</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="connection-관리"><a href="#connection-관리" class="header-anchor">#</a> Connection 관리</h2> <p>위에서 만들은 예제로 켜놓다 보면 중간에 lost connection이 뜨면서 정상적으로 작동 안하는 경우가 생긴다. 이는 업비트 서버에서 120초간 데이터가 수/발신 되지 않으면 연결을 끊어버리기 때문인데 이를 방지하는 방법으로 <a href="https://tools.ietf.org/html/rfc6455#section-5.5.2" target="_blank" rel="noopener noreferrer">WebSocket PING/PONG Frmae<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>를 제시하고 있다. 위에 작성한 소스코드에 PING/PONG을 넣어보자.</p> <p>먼저 필요한 상수들을 정의해준다. 공식문서에는 120초 기준으로 써있는데, 실제로는 60초 기준으로 끊어지고 있어서 pongWait를 60초로 정의했다.</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">const</span> <span class="token punctuation">(</span>
+	pongWait <span class="token operator">=</span> <span class="token number">60</span> <span class="token operator">*</span> time<span class="token punctuation">.</span>Second
+	pingPeriod <span class="token operator">=</span> <span class="token punctuation">(</span>pongWait <span class="token operator">*</span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">10</span>
+	payload <span class="token operator">=</span> <span class="token string">`[{&quot;ticket&quot;:&quot;test&quot;},{&quot;type&quot;:&quot;trade&quot;,&quot;codes&quot;:[&quot;KRW-MANA&quot;]}]`</span>
+<span class="token punctuation">)</span>
+</code></pre></div><p>다음은 write 부분에 ping 보내는 부분을 추가해야한다. pingPeriod마다 Ping을 보내줘야 해야하는데 ticker를 사용하면 이를 편하게 구현할 수 있다.</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>sc <span class="token operator">*</span>socket<span class="token punctuation">)</span> <span class="token function">write</span><span class="token punctuation">(</span>params <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ticker <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">NewTicker</span><span class="token punctuation">(</span>pingPeriod<span class="token punctuation">)</span>
+    <span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ticker<span class="token punctuation">.</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		sc<span class="token punctuation">.</span>conn<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;CLOSE&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	err <span class="token operator">:=</span> sc<span class="token punctuation">.</span>conn<span class="token punctuation">.</span><span class="token function">WriteMessage</span><span class="token punctuation">(</span>websocket<span class="token punctuation">.</span>TextMessage<span class="token punctuation">,</span> params<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span>
+    <span class="token punctuation">}</span>
+    
+	<span class="token keyword">for</span> <span class="token keyword">range</span> ticker<span class="token punctuation">.</span>C <span class="token punctuation">{</span>
+		<span class="token keyword">if</span> err <span class="token operator">:=</span> sc<span class="token punctuation">.</span>conn<span class="token punctuation">.</span><span class="token function">WriteMessage</span><span class="token punctuation">(</span>websocket<span class="token punctuation">.</span>PingMessage<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			<span class="token keyword">return</span>
+		<span class="token punctuation">}</span>
+		log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;ping&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 채널을 사용한다면 아래처럼도 가능하다</span>
+	<span class="token comment">//for {</span>
+	<span class="token comment">//	select {</span>
+	<span class="token comment">//	case &lt;-ticker.C:</span>
+	<span class="token comment">//		if err := sc.conn.WriteMessage(websocket.PingMessage, []byte{}); err != nil {</span>
+	<span class="token comment">//			return</span>
+	<span class="token comment">//		}</span>
+	<span class="token comment">//		log.Println(&quot;ping&quot;)</span>
+	<span class="token comment">//	}</span>
+	<span class="token comment">//}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>read 에는 PongHandler를 구현해준다.</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>sc <span class="token operator">*</span>socket<span class="token punctuation">)</span> <span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">defer</span> <span class="token keyword">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		sc<span class="token punctuation">.</span>conn<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;CLOSE&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+	sc<span class="token punctuation">.</span>conn<span class="token punctuation">.</span><span class="token function">SetPongHandler</span><span class="token punctuation">(</span><span class="token keyword">func</span><span class="token punctuation">(</span><span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
+		sc<span class="token punctuation">.</span>conn<span class="token punctuation">.</span><span class="token function">SetReadDeadline</span><span class="token punctuation">(</span>time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>pongWait<span class="token punctuation">)</span><span class="token punctuation">)</span>
+		log<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;pong&quot;</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span> <span class="token boolean">nil</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+	<span class="token keyword">for</span> <span class="token punctuation">{</span>
+		<span class="token boolean">_</span><span class="token punctuation">,</span> res<span class="token punctuation">,</span> err <span class="token operator">:=</span> sc<span class="token punctuation">.</span>conn<span class="token punctuation">.</span><span class="token function">ReadMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+			<span class="token keyword">return</span>
+		<span class="token punctuation">}</span>
+		data <span class="token operator">:=</span> <span class="token function">new</span><span class="token punctuation">(</span>Tradedata<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">:=</span> json<span class="token punctuation">.</span><span class="token function">Unmarshal</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+			<span class="token keyword">return</span>
+		<span class="token punctuation">}</span>
+
+		<span class="token function">testAction</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>다 되었다면 마지막으로 sc.write 앞에 <code>go</code>를 붙여준다. 이는 고루틴 수식어인데 내가 쓴 문서중 코루틴을 참고하면 이해가 빠를거다. sc.write에서 핑을 위해서 무한 반복문을 돌려놨기에 <code>go</code>를 붙이지 않으면 read를 영영 실행하지 않을거다. 이부분은 따로 나중에 고루틴에서 상세하게 다루려고 한다.</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token punctuation">(</span>sc <span class="token operator">*</span>socket<span class="token punctuation">)</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">if</span> err <span class="token operator">:=</span> sc<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">go</span> sc<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>upbitWssInfo<span class="token punctuation">)</span>
+	sc<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/golang/echo.html" class="prev">
+        echo를 이용한 RestfulAPI 구현
+      </a></span> <span class="next"><a href="/docs/golang/gopg.html">
+        gopg를 이용한 DB CRUD 구현
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docs/assets/js/app.9ec738af.js" defer></script><script src="/docs/assets/js/2.8740eb56.js" defer></script><script src="/docs/assets/js/33.6c831e82.js" defer></script>
+  </body>
+</html>

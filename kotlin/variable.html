@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kotlin 문법 - 변수 | Labyrintos71&#39;s Docs</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="docs with vuepress">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.156e236d.css" as="style"><link rel="preload" href="/docs/assets/js/app.9ec738af.js" as="script"><link rel="preload" href="/docs/assets/js/2.8740eb56.js" as="script"><link rel="preload" href="/docs/assets/js/42.06ed4f23.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.cb90e021.js"><link rel="prefetch" href="/docs/assets/js/11.52006c39.js"><link rel="prefetch" href="/docs/assets/js/12.2f6fda33.js"><link rel="prefetch" href="/docs/assets/js/13.5dba7c13.js"><link rel="prefetch" href="/docs/assets/js/14.a6f1d96e.js"><link rel="prefetch" href="/docs/assets/js/15.42009d6e.js"><link rel="prefetch" href="/docs/assets/js/16.09dcdbac.js"><link rel="prefetch" href="/docs/assets/js/17.283ab3b0.js"><link rel="prefetch" href="/docs/assets/js/18.d3f3cd4a.js"><link rel="prefetch" href="/docs/assets/js/19.c5f4545b.js"><link rel="prefetch" href="/docs/assets/js/20.569c758a.js"><link rel="prefetch" href="/docs/assets/js/21.f209c001.js"><link rel="prefetch" href="/docs/assets/js/22.c8313833.js"><link rel="prefetch" href="/docs/assets/js/23.1da64bbd.js"><link rel="prefetch" href="/docs/assets/js/24.a70523e5.js"><link rel="prefetch" href="/docs/assets/js/25.a1dc5394.js"><link rel="prefetch" href="/docs/assets/js/26.05cb28ee.js"><link rel="prefetch" href="/docs/assets/js/27.f0605b54.js"><link rel="prefetch" href="/docs/assets/js/28.0063dc56.js"><link rel="prefetch" href="/docs/assets/js/29.0c5a26b7.js"><link rel="prefetch" href="/docs/assets/js/3.687b939c.js"><link rel="prefetch" href="/docs/assets/js/30.e5f8cab6.js"><link rel="prefetch" href="/docs/assets/js/31.873dd8da.js"><link rel="prefetch" href="/docs/assets/js/32.c1ad188c.js"><link rel="prefetch" href="/docs/assets/js/33.6c831e82.js"><link rel="prefetch" href="/docs/assets/js/34.26ae6b14.js"><link rel="prefetch" href="/docs/assets/js/35.fdd56b3b.js"><link rel="prefetch" href="/docs/assets/js/36.76eaa128.js"><link rel="prefetch" href="/docs/assets/js/37.7b8b842b.js"><link rel="prefetch" href="/docs/assets/js/38.77a6b056.js"><link rel="prefetch" href="/docs/assets/js/39.d376624a.js"><link rel="prefetch" href="/docs/assets/js/4.66cf2b18.js"><link rel="prefetch" href="/docs/assets/js/40.9a19af1f.js"><link rel="prefetch" href="/docs/assets/js/41.d90bfe99.js"><link rel="prefetch" href="/docs/assets/js/43.5fcd743c.js"><link rel="prefetch" href="/docs/assets/js/44.c48a474c.js"><link rel="prefetch" href="/docs/assets/js/45.584bdafe.js"><link rel="prefetch" href="/docs/assets/js/46.dc254832.js"><link rel="prefetch" href="/docs/assets/js/47.6de23ee5.js"><link rel="prefetch" href="/docs/assets/js/48.8a708e85.js"><link rel="prefetch" href="/docs/assets/js/49.a4b1600d.js"><link rel="prefetch" href="/docs/assets/js/5.729974e5.js"><link rel="prefetch" href="/docs/assets/js/50.7c83830e.js"><link rel="prefetch" href="/docs/assets/js/51.58708a54.js"><link rel="prefetch" href="/docs/assets/js/52.eeaf96a9.js"><link rel="prefetch" href="/docs/assets/js/53.f3de5963.js"><link rel="prefetch" href="/docs/assets/js/6.aa72b1f7.js"><link rel="prefetch" href="/docs/assets/js/7.13287087.js"><link rel="prefetch" href="/docs/assets/js/8.5f2eb7f7.js"><link rel="prefetch" href="/docs/assets/js/9.18840fa1.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.156e236d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">Labyrintos71's Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/kotlin/" class="nav-link router-link-active">
+  Kotlin
+</a></div><div class="nav-item"><a href="/docs/android/" class="nav-link">
+  Android
+</a></div><div class="nav-item"><a href="/docs/flutter/" class="nav-link">
+  Flutter
+</a></div><div class="nav-item"><a href="/docs/nodejs/" class="nav-link">
+  NodeJS
+</a></div><div class="nav-item"><a href="/docs/vuejs/" class="nav-link">
+  VueJS
+</a></div><div class="nav-item"><a href="/docs/electron/" class="nav-link">
+  Electron
+</a></div><div class="nav-item"><a href="/docs/golang/" class="nav-link">
+  Golang
+</a></div><div class="nav-item"><a href="https://github.com/labyrintos71/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/kotlin/" class="nav-link router-link-active">
+  Kotlin
+</a></div><div class="nav-item"><a href="/docs/android/" class="nav-link">
+  Android
+</a></div><div class="nav-item"><a href="/docs/flutter/" class="nav-link">
+  Flutter
+</a></div><div class="nav-item"><a href="/docs/nodejs/" class="nav-link">
+  NodeJS
+</a></div><div class="nav-item"><a href="/docs/vuejs/" class="nav-link">
+  VueJS
+</a></div><div class="nav-item"><a href="/docs/electron/" class="nav-link">
+  Electron
+</a></div><div class="nav-item"><a href="/docs/golang/" class="nav-link">
+  Golang
+</a></div><div class="nav-item"><a href="https://github.com/labyrintos71/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Kotlin</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/kotlin/" aria-current="page" class="sidebar-link">시작하기</a></li><li><a href="/docs/kotlin/variable.html" aria-current="page" class="active sidebar-link">Kotlin 문법 - 변수</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/kotlin/variable.html#변수-선언-기본형태" class="sidebar-link">변수 선언 기본형태</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/variable.html#val-var" class="sidebar-link">val/var</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/variable.html#elvis-op" class="sidebar-link">Elvis op, ?:</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/variable.html#type-cast-is-as" class="sidebar-link">Type cast, is, as?</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/variable.html#lateinit" class="sidebar-link">lateinit</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/variable.html#non-null-nullable" class="sidebar-link">Non-Null/Nullable</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/variable.html#safe-calls" class="sidebar-link">Safe Calls, ?.</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/variable.html#not-null" class="sidebar-link">Not null, !!</a></li></ul></li><li><a href="/docs/kotlin/ifwhen.html" class="sidebar-link">Kotlin 문법 - 제어흐름</a></li><li><a href="/docs/kotlin/classobject.html" class="sidebar-link">Kotlin 문법 - 클래스 &amp; 오브젝트</a></li><li><a href="/docs/kotlin/function.html" class="sidebar-link">Kotlin 문법 - 함수</a></li><li><a href="/docs/kotlin/extensionfunction.html" class="sidebar-link">Kotlin 문법 - 범위지정함수</a></li><li><a href="/docs/kotlin/delegation.html" class="sidebar-link">Kotlin 문법 - 위임</a></li><li><a href="/docs/kotlin/selenium.html" class="sidebar-link">Selenium</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Coroutine</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flutter</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>NodeJS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>VueJS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Electron</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Golang</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Tradingview</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/tradingview/" class="sidebar-link">시작하기</a></li><li><a href="/docs/tradingview/udf.html" class="sidebar-link">UDF-Reference</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="kotlin-문법-변수"><a href="#kotlin-문법-변수" class="header-anchor">#</a> Kotlin 문법 - 변수</h1> <h2 id="변수-선언-기본형태"><a href="#변수-선언-기본형태" class="header-anchor">#</a> 변수 선언 기본형태</h2> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token comment">// var/val 변수명:변수타입 = 초기화 값</span>
+<span class="token keyword">var</span> name<span class="token operator">:</span>String <span class="token operator">=</span> <span class="token string">&quot;name&quot;</span>
+</code></pre></div><h2 id="val-var"><a href="#val-var" class="header-anchor">#</a> val/var</h2> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token comment">// val로 객체를 선언할 경우 초기화 후에도 객체의 프로퍼티값은 변경 가능</span>
+<span class="token keyword">val</span> <span class="token operator">=</span> 한번 초기화 후 읽기만 가능한 <span class="token keyword">final</span> 변수
+<span class="token keyword">var</span> <span class="token operator">=</span> 읽기<span class="token operator">/</span>쓰기 가능한 변수
+</code></pre></div><h2 id="elvis-op"><a href="#elvis-op" class="header-anchor">#</a> Elvis op, ?:</h2> <p>코틀린에는 삼항 연산자가 없다.<br>
+대신에 엘비스 머리를 닮은 연산자가 있다!<br>
+엘비스 연산자는 좌항이 null 일경우에 우항값을 반환한다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">var</span> a<span class="token operator">:</span>String<span class="token operator">?</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token function">println</span><span class="token punctuation">(</span>a<span class="token operator">?</span><span class="token punctuation">.</span>length <span class="token operator">?:</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// -1</span>
+a <span class="token operator">=</span> <span class="token string">&quot;str&quot;</span>
+<span class="token function">println</span><span class="token punctuation">(</span>a<span class="token operator">?</span><span class="token punctuation">.</span>length <span class="token operator">?:</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// 3</span>
+</code></pre></div><h2 id="type-cast-is-as"><a href="#type-cast-is-as" class="header-anchor">#</a> Type cast, is, as?</h2> <p>스마트 캐스트인 is 를 이용하면 as를 사용하지 않고도 type을 변환할 수 있다.<br>
+단 as를 바로 사용하여 casting 할때 type이 맞지 않으면 ClassCastException이 발생한다.</p> <p>따라서 kotlin에서는 이를 방지하는 as? 를 지원한다.<br>
+as? 는 casting을 시도하고, casting이 불가능 하면 null을 반환한다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">class</span> As <span class="token punctuation">{</span>
+    <span class="token keyword">fun</span> <span class="token function">As</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> str<span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">&quot;This is Int?&quot;</span>
+        <span class="token keyword">val</span> value<span class="token operator">:</span> Int <span class="token operator">=</span> str <span class="token keyword">as</span><span class="token operator">?</span> Int <span class="token operator">?:</span> <span class="token number">0</span>
+        <span class="token function">println</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token comment">// 0</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="lateinit"><a href="#lateinit" class="header-anchor">#</a> lateinit</h2> <p>안드로이드에서 변수선언은 클래스의 위쪽에서 하고 초기화는 onCreat()메소드에서 하는경우가 많다.<br>
+이 때 lateinit 키워드를 추가하면 된다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">class</span> SampleActivity <span class="token punctuation">{</span>
+
+        <span class="token keyword">private</span> <span class="token keyword">lateinit</span> <span class="token keyword">var</span> adapter<span class="token operator">:</span> SampleAdapter
+
+        <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">onCreate</span><span class="token punctuation">(</span>savedInstanceState<span class="token operator">:</span> Bundle<span class="token operator">?</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">onCreate</span><span class="token punctuation">(</span>savedInstanceState<span class="token punctuation">)</span>
+            <span class="token function">setContentView</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>layout<span class="token punctuation">.</span>activity_sample_main<span class="token punctuation">)</span>
+
+            <span class="token comment">// 부르는 시점 초기화</span>
+            adapter <span class="token operator">=</span> <span class="token function">SampleAdapter</span><span class="token punctuation">(</span><span class="token function">ImageViewModel</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token label symbol">@SampleMainActivity</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            adapter<span class="token punctuation">.</span><span class="token function">addItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            adapter<span class="token punctuation">.</span><span class="token function">notifyDataSetChanged</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><h2 id="non-null-nullable"><a href="#non-null-nullable" class="header-anchor">#</a> Non-Null/Nullable</h2> <p>null을 값으로 가질 수 있으면 Nullable, null을 값으로 가질 수 없으면 Non-null타입이다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token comment">// 에러     </span>
+<span class="token keyword">var</span> a<span class="token operator">:</span>String <span class="token operator">=</span> <span class="token keyword">null</span>
+</code></pre></div><p>String 은 Non-Null타입이기 떄문에 null 을 가질 수 없고, 초기화도 안할 수 없다.<br>
+만약 선언만 하고싶은 상황이라면 이는 추후에 설명할 lateinit 으로 해결 할 수 있다.</p> <p>Nullable로 선언하고싶으면 변수 자료형 뒤에 ? 붙이면 사용 가능하다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">var</span> a<span class="token operator">:</span>String<span class="token operator">?</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token function">println</span><span class="token punctuation">(</span>a<span class="token operator">?</span><span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token comment">//null 출력됨    </span>
+</code></pre></div><h2 id="safe-calls"><a href="#safe-calls" class="header-anchor">#</a> Safe Calls, ?.</h2> <p>코틀린에서는 ?. 연산자를 이용해 null값에 대해 안전하게 변수를 지정하고 불러 올 수 있다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">class</span> Call <span class="token punctuation">{</span>
+     <span class="token keyword">var</span> name<span class="token operator">:</span> String<span class="token operator">?</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+
+<span class="token punctuation">}</span>
+<span class="token keyword">fun</span> <span class="token function">safeCallsTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> call<span class="token operator">:</span> Call<span class="token operator">?</span> <span class="token operator">=</span> <span class="token function">Call</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">val</span> str<span class="token operator">:</span> String <span class="token operator">=</span> call<span class="token operator">?</span><span class="token punctuation">.</span>name <span class="token operator">?:</span> <span class="token string">&quot;Null text&quot;</span>
+        <span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token comment">// Null text</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="not-null"><a href="#not-null" class="header-anchor">#</a> Not null, !!</h2> <p>Null값이 안들어온다는 보증을 해주는 연산자이다.
+Null이 아닌값만 들어올 때 사용해야 하며 Null이 들어오게 될경우 NPE를 발생시킨다. 최대한 지양하는게 좋다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">var</span> str<span class="token operator">:</span>String<span class="token operator">?</span> <span class="token operator">=</span> <span class="token string">&quot;TEST&quot;</span>
+<span class="token keyword">var</span> nnstr<span class="token operator">:</span>String <span class="token operator">=</span> str<span class="token operator">!!</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/kotlin/" class="prev router-link-active">
+        시작하기
+      </a></span> <span class="next"><a href="/docs/kotlin/ifwhen.html">
+        Kotlin 문법 - 제어흐름
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docs/assets/js/app.9ec738af.js" defer></script><script src="/docs/assets/js/2.8740eb56.js" defer></script><script src="/docs/assets/js/42.06ed4f23.js" defer></script>
+  </body>
+</html>

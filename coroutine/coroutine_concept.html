@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Coroutine 개념 | Labyrintos71&#39;s Docs</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="docs with vuepress">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.156e236d.css" as="style"><link rel="preload" href="/docs/assets/js/app.9ec738af.js" as="script"><link rel="preload" href="/docs/assets/js/2.8740eb56.js" as="script"><link rel="preload" href="/docs/assets/js/18.d3f3cd4a.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.cb90e021.js"><link rel="prefetch" href="/docs/assets/js/11.52006c39.js"><link rel="prefetch" href="/docs/assets/js/12.2f6fda33.js"><link rel="prefetch" href="/docs/assets/js/13.5dba7c13.js"><link rel="prefetch" href="/docs/assets/js/14.a6f1d96e.js"><link rel="prefetch" href="/docs/assets/js/15.42009d6e.js"><link rel="prefetch" href="/docs/assets/js/16.09dcdbac.js"><link rel="prefetch" href="/docs/assets/js/17.283ab3b0.js"><link rel="prefetch" href="/docs/assets/js/19.c5f4545b.js"><link rel="prefetch" href="/docs/assets/js/20.569c758a.js"><link rel="prefetch" href="/docs/assets/js/21.f209c001.js"><link rel="prefetch" href="/docs/assets/js/22.c8313833.js"><link rel="prefetch" href="/docs/assets/js/23.1da64bbd.js"><link rel="prefetch" href="/docs/assets/js/24.a70523e5.js"><link rel="prefetch" href="/docs/assets/js/25.a1dc5394.js"><link rel="prefetch" href="/docs/assets/js/26.05cb28ee.js"><link rel="prefetch" href="/docs/assets/js/27.f0605b54.js"><link rel="prefetch" href="/docs/assets/js/28.0063dc56.js"><link rel="prefetch" href="/docs/assets/js/29.0c5a26b7.js"><link rel="prefetch" href="/docs/assets/js/3.687b939c.js"><link rel="prefetch" href="/docs/assets/js/30.e5f8cab6.js"><link rel="prefetch" href="/docs/assets/js/31.873dd8da.js"><link rel="prefetch" href="/docs/assets/js/32.c1ad188c.js"><link rel="prefetch" href="/docs/assets/js/33.6c831e82.js"><link rel="prefetch" href="/docs/assets/js/34.26ae6b14.js"><link rel="prefetch" href="/docs/assets/js/35.fdd56b3b.js"><link rel="prefetch" href="/docs/assets/js/36.76eaa128.js"><link rel="prefetch" href="/docs/assets/js/37.7b8b842b.js"><link rel="prefetch" href="/docs/assets/js/38.77a6b056.js"><link rel="prefetch" href="/docs/assets/js/39.d376624a.js"><link rel="prefetch" href="/docs/assets/js/4.66cf2b18.js"><link rel="prefetch" href="/docs/assets/js/40.9a19af1f.js"><link rel="prefetch" href="/docs/assets/js/41.d90bfe99.js"><link rel="prefetch" href="/docs/assets/js/42.06ed4f23.js"><link rel="prefetch" href="/docs/assets/js/43.5fcd743c.js"><link rel="prefetch" href="/docs/assets/js/44.c48a474c.js"><link rel="prefetch" href="/docs/assets/js/45.584bdafe.js"><link rel="prefetch" href="/docs/assets/js/46.dc254832.js"><link rel="prefetch" href="/docs/assets/js/47.6de23ee5.js"><link rel="prefetch" href="/docs/assets/js/48.8a708e85.js"><link rel="prefetch" href="/docs/assets/js/49.a4b1600d.js"><link rel="prefetch" href="/docs/assets/js/5.729974e5.js"><link rel="prefetch" href="/docs/assets/js/50.7c83830e.js"><link rel="prefetch" href="/docs/assets/js/51.58708a54.js"><link rel="prefetch" href="/docs/assets/js/52.eeaf96a9.js"><link rel="prefetch" href="/docs/assets/js/53.f3de5963.js"><link rel="prefetch" href="/docs/assets/js/6.aa72b1f7.js"><link rel="prefetch" href="/docs/assets/js/7.13287087.js"><link rel="prefetch" href="/docs/assets/js/8.5f2eb7f7.js"><link rel="prefetch" href="/docs/assets/js/9.18840fa1.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.156e236d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">Labyrintos71's Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/kotlin/" class="nav-link">
+  Kotlin
+</a></div><div class="nav-item"><a href="/docs/android/" class="nav-link">
+  Android
+</a></div><div class="nav-item"><a href="/docs/flutter/" class="nav-link">
+  Flutter
+</a></div><div class="nav-item"><a href="/docs/nodejs/" class="nav-link">
+  NodeJS
+</a></div><div class="nav-item"><a href="/docs/vuejs/" class="nav-link">
+  VueJS
+</a></div><div class="nav-item"><a href="/docs/electron/" class="nav-link">
+  Electron
+</a></div><div class="nav-item"><a href="/docs/golang/" class="nav-link">
+  Golang
+</a></div><div class="nav-item"><a href="https://github.com/labyrintos71/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/kotlin/" class="nav-link">
+  Kotlin
+</a></div><div class="nav-item"><a href="/docs/android/" class="nav-link">
+  Android
+</a></div><div class="nav-item"><a href="/docs/flutter/" class="nav-link">
+  Flutter
+</a></div><div class="nav-item"><a href="/docs/nodejs/" class="nav-link">
+  NodeJS
+</a></div><div class="nav-item"><a href="/docs/vuejs/" class="nav-link">
+  VueJS
+</a></div><div class="nav-item"><a href="/docs/electron/" class="nav-link">
+  Electron
+</a></div><div class="nav-item"><a href="/docs/golang/" class="nav-link">
+  Golang
+</a></div><div class="nav-item"><a href="https://github.com/labyrintos71/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Kotlin</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Coroutine</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/coroutine/" aria-current="page" class="sidebar-link">시작하기</a></li><li><a href="/docs/coroutine/coroutine_concept.html" aria-current="page" class="active sidebar-link">Coroutine 개념</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/coroutine/coroutine_concept.html#coroutine" class="sidebar-link">Coroutine</a></li><li class="sidebar-sub-header"><a href="/docs/coroutine/coroutine_concept.html#launch-async" class="sidebar-link">launch, async</a></li><li class="sidebar-sub-header"><a href="/docs/coroutine/coroutine_concept.html#지연실행" class="sidebar-link">지연실행</a></li></ul></li><li><a href="/docs/coroutine/coroutine_basic1.html" class="sidebar-link">Coroutine 기초 - 1</a></li><li><a href="/docs/coroutine/coroutine_basic2.html" class="sidebar-link">Coroutine 기초 - 2</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flutter</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>NodeJS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>VueJS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Electron</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Golang</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Tradingview</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/tradingview/" class="sidebar-link">시작하기</a></li><li><a href="/docs/tradingview/udf.html" class="sidebar-link">UDF-Reference</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="coroutine-개념"><a href="#coroutine-개념" class="header-anchor">#</a> Coroutine 개념</h1> <h2 id="coroutine"><a href="#coroutine" class="header-anchor">#</a> Coroutine</h2> <p>코루틴을 배워보기 전에, 알고가면 좋을 개념들이다.
+</p><div class="table-of-contents"><ul><li><a href="#coroutine">Coroutine</a><ul><li><a href="#coroutinescope-globalscope">CoroutineScope, GlobalScope</a></li><li><a href="#coroutinecontext">CoroutineContext</a></li><li><a href="#dispatcher">Dispatcher</a></li></ul></li><li><a href="#launch-async">launch, async</a><ul><li><a href="#launch">launch</a></li><li><a href="#async">async</a></li></ul></li><li><a href="#지연실행">지연실행</a></li></ul></div><p></p> <h3 id="coroutinescope-globalscope"><a href="#coroutinescope-globalscope" class="header-anchor">#</a> CoroutineScope, GlobalScope</h3> <p><code>CoroutineScope</code>는 말 그대로 코루틴을 묶음으로 제어할수 있는 단위다.</p> <p>GloablScope는 CoroutineScope의 한 종류이며 프로그램 전반에 걸쳐 백그라운드에서 실행된다.</p> <h3 id="coroutinecontext"><a href="#coroutinecontext" class="header-anchor">#</a> CoroutineContext</h3> <p><code>CoroutineContext</code>는 코루틴을 어떻게 처리할것인지 에 대한 레퍼런스이며<br>
+주요 요소로는 Job, dispatcher가 있다.</p> <h3 id="dispatcher"><a href="#dispatcher" class="header-anchor">#</a> Dispatcher</h3> <p><code>Dispatcher</code>는 CoroutineContext의 주요 요소다.
+CoroutineContext 을 상속받아 어떤 스레드를 이용해서 어떻게 동작할것인지를 미리 정의되어있다.</p> <ul><li>Dispatchers.Default : CPU 사용량이 많은 작업에 사용, 주 스레드에서 작업하기에는 너무 긴 작업들에게 적합.</li> <li>Dispatchers.IO : 네트워크, 디스크 사용 할때 , 파일 및 소켓 입출력 작업에 최적화.</li> <li>Dispatchers.Main : 안드로이드의 경우 UI 스레드를 사용.</li> <li>Dispatchers.Unconfined  : 특정 스레드, 스레드 풀을 지정하지 않으며 일반적으로 사용 안함.</li></ul> <h2 id="launch-async"><a href="#launch-async" class="header-anchor">#</a> launch, async</h2> <p><code>launch</code>, <code>async</code>는 CouroutineScope의 확장함수 이며, 넘겨받은 코드블록으로 코루틴을 만들고 실행해주는 빌더다.</p> <p><code>launch</code>는 Job, <code>async</code>는 Defferd 객체를 반환하며, 이 객체를 사용해 수행 결과를 받거나 스케쥴 관리가 가능하다.</p> <h3 id="launch"><a href="#launch" class="header-anchor">#</a> launch</h3> <p>launch()로 정의된 코루틴 블록은 Job을 반환한다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">val</span> job <span class="token operator">:</span> Job <span class="token operator">=</span> launch <span class="token punctuation">{</span>
+    <span class="token operator">..</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>받아온 Job객체는 해당 코루틴 블록의 스케쥴 관리나 상태 등을 확인 할 떄 사용한다.<br>
+Job.join()을 이용하면 해당 코루틴 블록이 완료 될 떄 까지 대기 할 수 있다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> runBlocking <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> job1<span class="token operator">:</span> Job <span class="token operator">=</span> launch <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span>
+            i<span class="token operator">++</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//job1 완료 대기</span>
+    job1<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">//job1.cancel() 취소</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>job객체가 여러개라면 일일이 join()을 호출하지 않고 joinAll()을 사용할 수 있다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token function">joinAll</span><span class="token punctuation">(</span>job1<span class="token punctuation">,</span>job2<span class="token punctuation">)</span>
+</code></pre></div><p>launch()로 정의된 코루틴 블록은 즉시 수행되며 Job 객체로는 블록 제어는 가능하지만 블록의 결과를 받아 올 수없다. 이를 위해서는 async()를 사용하면 된다.</p> <h3 id="async"><a href="#async" class="header-anchor">#</a> async</h3> <p>async()로 정의된 코루틴 블록은 Defferd을 반환한다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">val</span> deferred <span class="token operator">:</span> Deferred<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> <span class="token operator">=</span> async <span class="token punctuation">{</span>
+    <span class="token operator">..</span><span class="token punctuation">.</span>
+    T <span class="token comment">// 결과값</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>받아온 Defferd객체를 이용해 제어가 가능하며 await()를 이용해 결과값을 받아올 수 있다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> runBlocking <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> deferred<span class="token operator">:</span> Deferred<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> <span class="token operator">=</span> async <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span>
+            i<span class="token operator">++</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token string">&quot;result&quot;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">val</span> msg <span class="token operator">=</span> deferred<span class="token punctuation">.</span><span class="token function">await</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">println</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token comment">// result 출력</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>여러개의 async 코루틴 블록을 실행할 경우 각각의 Deferred 객체에 대해서 await() 함수로 코루틴 블록이 완료 될때까지 다음 코드 수행을 대기할수 있다. await() 함수는 코루틴 블록이 완료되면 결과를 반환한다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> runBlocking <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> deferred1 <span class="token operator">=</span> async <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span>
+            i<span class="token operator">++</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token string">&quot;result1&quot;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">val</span> deferred2 <span class="token operator">=</span> async <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+            i<span class="token operator">++</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token string">&quot;result2&quot;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">val</span> result1 <span class="token operator">=</span> deferred1<span class="token punctuation">.</span><span class="token function">await</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> result2 <span class="token operator">=</span> deferred2<span class="token punctuation">.</span><span class="token function">await</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;<span class="token interpolation variable">$result1</span> , <span class="token interpolation variable">$result2</span>&quot;</span><span class="token punctuation">)</span> <span class="token comment">// result1 , result 2 출력</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>물론 join()과 마찬가지로 await()도 한번에 호출할 수 있다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">var</span> result <span class="token operator">:</span> List<span class="token operator">&lt;</span>Any<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token function">awaitAll</span><span class="token punctuation">(</span>deferred1<span class="token punctuation">,</span>deferred2<span class="token punctuation">)</span>
+</code></pre></div><p>Any 타입으로 결과를 받기 때문에 반환형태가 달라도 상관없다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code> <span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> runBlocking <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> deferred1 <span class="token operator">=</span> async <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
+            i<span class="token operator">++</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token string">&quot;result1&quot;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">val</span> deferred2 <span class="token operator">=</span> async <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+            i<span class="token operator">++</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token number">1234</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">val</span> result1 <span class="token operator">=</span> deferred1<span class="token punctuation">.</span><span class="token function">await</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> result2 <span class="token operator">=</span> deferred2<span class="token punctuation">.</span><span class="token function">await</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">awaitAll</span><span class="token punctuation">(</span>deferred1<span class="token punctuation">,</span>deferred2<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">{</span>
+        <span class="token function">println</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="지연실행"><a href="#지연실행" class="header-anchor">#</a> 지연실행</h2> <p>launch() 와 async() 모두 즉시 실행되는데 만약 처리 시점을 뒤로 미루고 싶을 경우 CoroutineStart.LAZY를 이용해 지연 시킬 수 있다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">val</span> job <span class="token operator">=</span> <span class="token function">launch</span> <span class="token punctuation">(</span>start <span class="token operator">=</span> CoroutineStart<span class="token punctuation">.</span>LAZY<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">..</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+또는
+<span class="token keyword">val</span> deferred <span class="token operator">=</span> <span class="token function">async</span> <span class="token punctuation">(</span>start <span class="token operator">=</span> CoroutineStart<span class="token punctuation">.</span>LAZY<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">..</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>launch 코루틴 블록을 지연 실행 시킬 경우 Job 클래스 의 start() 함수 를 호출하거나 join() 함수를 호출하는 시점에 launch 코드 블록이 수행된다.</p> <div class="language- extra-class"><pre class="language-text"><code>job.start()
+또는
+job.join()
+</code></pre></div><p>async 코루틴 블록을 지연 실행 시킬 경우 Deferred 클래스 의 start() 함수 를 호출하거나 await() 함수를 호출하는 시점에 async 코드 블록이 수행된다.</p> <div class="language- extra-class"><pre class="language-text"><code>deferred.start()
+또는
+deferred.await()
+</code></pre></div><p>launch, async 블록 모두 start()로 실행시킬 경우 수행결과를 반환하지 않는다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> runBlocking <span class="token punctuation">{</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;start&quot;</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">val</span> deferred <span class="token operator">=</span> <span class="token function">async</span><span class="token punctuation">(</span>start <span class="token operator">=</span> CoroutineStart<span class="token punctuation">.</span>LAZY<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span>
+            <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;lazy async <span class="token interpolation variable">$i</span>&quot;</span><span class="token punctuation">)</span>
+            i<span class="token operator">++</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    deferred<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;end&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>위에처럼 start()로 실행 할 경우</p> <div class="language- extra-class"><pre class="language-text"><code>start
+end
+lazy async 0
+lazy async 1
+lazy async 2
+lazy async 3
+lazy async 4
+</code></pre></div><p>를 출력하게 된다.</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/coroutine/" class="prev router-link-active">
+        시작하기
+      </a></span> <span class="next"><a href="/docs/coroutine/coroutine_basic1.html">
+        Coroutine 기초 - 1
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docs/assets/js/app.9ec738af.js" defer></script><script src="/docs/assets/js/2.8740eb56.js" defer></script><script src="/docs/assets/js/18.d3f3cd4a.js" defer></script>
+  </body>
+</html>

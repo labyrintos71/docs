@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Coroutine 기초 - 1 | Labyrintos71&#39;s Docs</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="docs with vuepress">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.156e236d.css" as="style"><link rel="preload" href="/docs/assets/js/app.9ec738af.js" as="script"><link rel="preload" href="/docs/assets/js/2.8740eb56.js" as="script"><link rel="preload" href="/docs/assets/js/16.09dcdbac.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.cb90e021.js"><link rel="prefetch" href="/docs/assets/js/11.52006c39.js"><link rel="prefetch" href="/docs/assets/js/12.2f6fda33.js"><link rel="prefetch" href="/docs/assets/js/13.5dba7c13.js"><link rel="prefetch" href="/docs/assets/js/14.a6f1d96e.js"><link rel="prefetch" href="/docs/assets/js/15.42009d6e.js"><link rel="prefetch" href="/docs/assets/js/17.283ab3b0.js"><link rel="prefetch" href="/docs/assets/js/18.d3f3cd4a.js"><link rel="prefetch" href="/docs/assets/js/19.c5f4545b.js"><link rel="prefetch" href="/docs/assets/js/20.569c758a.js"><link rel="prefetch" href="/docs/assets/js/21.f209c001.js"><link rel="prefetch" href="/docs/assets/js/22.c8313833.js"><link rel="prefetch" href="/docs/assets/js/23.1da64bbd.js"><link rel="prefetch" href="/docs/assets/js/24.a70523e5.js"><link rel="prefetch" href="/docs/assets/js/25.a1dc5394.js"><link rel="prefetch" href="/docs/assets/js/26.05cb28ee.js"><link rel="prefetch" href="/docs/assets/js/27.f0605b54.js"><link rel="prefetch" href="/docs/assets/js/28.0063dc56.js"><link rel="prefetch" href="/docs/assets/js/29.0c5a26b7.js"><link rel="prefetch" href="/docs/assets/js/3.687b939c.js"><link rel="prefetch" href="/docs/assets/js/30.e5f8cab6.js"><link rel="prefetch" href="/docs/assets/js/31.873dd8da.js"><link rel="prefetch" href="/docs/assets/js/32.c1ad188c.js"><link rel="prefetch" href="/docs/assets/js/33.6c831e82.js"><link rel="prefetch" href="/docs/assets/js/34.26ae6b14.js"><link rel="prefetch" href="/docs/assets/js/35.fdd56b3b.js"><link rel="prefetch" href="/docs/assets/js/36.76eaa128.js"><link rel="prefetch" href="/docs/assets/js/37.7b8b842b.js"><link rel="prefetch" href="/docs/assets/js/38.77a6b056.js"><link rel="prefetch" href="/docs/assets/js/39.d376624a.js"><link rel="prefetch" href="/docs/assets/js/4.66cf2b18.js"><link rel="prefetch" href="/docs/assets/js/40.9a19af1f.js"><link rel="prefetch" href="/docs/assets/js/41.d90bfe99.js"><link rel="prefetch" href="/docs/assets/js/42.06ed4f23.js"><link rel="prefetch" href="/docs/assets/js/43.5fcd743c.js"><link rel="prefetch" href="/docs/assets/js/44.c48a474c.js"><link rel="prefetch" href="/docs/assets/js/45.584bdafe.js"><link rel="prefetch" href="/docs/assets/js/46.dc254832.js"><link rel="prefetch" href="/docs/assets/js/47.6de23ee5.js"><link rel="prefetch" href="/docs/assets/js/48.8a708e85.js"><link rel="prefetch" href="/docs/assets/js/49.a4b1600d.js"><link rel="prefetch" href="/docs/assets/js/5.729974e5.js"><link rel="prefetch" href="/docs/assets/js/50.7c83830e.js"><link rel="prefetch" href="/docs/assets/js/51.58708a54.js"><link rel="prefetch" href="/docs/assets/js/52.eeaf96a9.js"><link rel="prefetch" href="/docs/assets/js/53.f3de5963.js"><link rel="prefetch" href="/docs/assets/js/6.aa72b1f7.js"><link rel="prefetch" href="/docs/assets/js/7.13287087.js"><link rel="prefetch" href="/docs/assets/js/8.5f2eb7f7.js"><link rel="prefetch" href="/docs/assets/js/9.18840fa1.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.156e236d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">Labyrintos71's Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/kotlin/" class="nav-link">
+  Kotlin
+</a></div><div class="nav-item"><a href="/docs/android/" class="nav-link">
+  Android
+</a></div><div class="nav-item"><a href="/docs/flutter/" class="nav-link">
+  Flutter
+</a></div><div class="nav-item"><a href="/docs/nodejs/" class="nav-link">
+  NodeJS
+</a></div><div class="nav-item"><a href="/docs/vuejs/" class="nav-link">
+  VueJS
+</a></div><div class="nav-item"><a href="/docs/electron/" class="nav-link">
+  Electron
+</a></div><div class="nav-item"><a href="/docs/golang/" class="nav-link">
+  Golang
+</a></div><div class="nav-item"><a href="https://github.com/labyrintos71/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/kotlin/" class="nav-link">
+  Kotlin
+</a></div><div class="nav-item"><a href="/docs/android/" class="nav-link">
+  Android
+</a></div><div class="nav-item"><a href="/docs/flutter/" class="nav-link">
+  Flutter
+</a></div><div class="nav-item"><a href="/docs/nodejs/" class="nav-link">
+  NodeJS
+</a></div><div class="nav-item"><a href="/docs/vuejs/" class="nav-link">
+  VueJS
+</a></div><div class="nav-item"><a href="/docs/electron/" class="nav-link">
+  Electron
+</a></div><div class="nav-item"><a href="/docs/golang/" class="nav-link">
+  Golang
+</a></div><div class="nav-item"><a href="https://github.com/labyrintos71/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Kotlin</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Coroutine</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/coroutine/" aria-current="page" class="sidebar-link">시작하기</a></li><li><a href="/docs/coroutine/coroutine_concept.html" class="sidebar-link">Coroutine 개념</a></li><li><a href="/docs/coroutine/coroutine_basic1.html" aria-current="page" class="active sidebar-link">Coroutine 기초 - 1</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/coroutine/coroutine_basic1.html#runblocking" class="sidebar-link">runBlocking</a></li><li class="sidebar-sub-header"><a href="/docs/coroutine/coroutine_basic1.html#job" class="sidebar-link">Job</a></li></ul></li><li><a href="/docs/coroutine/coroutine_basic2.html" class="sidebar-link">Coroutine 기초 - 2</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flutter</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>NodeJS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>VueJS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Electron</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Golang</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Tradingview</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/tradingview/" class="sidebar-link">시작하기</a></li><li><a href="/docs/tradingview/udf.html" class="sidebar-link">UDF-Reference</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="coroutine-기초-1"><a href="#coroutine-기초-1" class="header-anchor">#</a> Coroutine 기초 - 1</h1> <p>코틀린 공식 가이드에 있는 예제를 보도록 하자.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">import</span> kotlinx<span class="token punctuation">.</span>coroutines<span class="token punctuation">.</span><span class="token operator">*</span>
+
+<span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    GlobalScope<span class="token punctuation">.</span><span class="token function">launch</span> <span class="token punctuation">{</span> <span class="token comment">// launch a new coroutine in background </span>
+                         <span class="token comment">// and continue</span>
+        <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000L</span><span class="token punctuation">)</span> <span class="token comment">// non-blocking delay for 1 second </span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;World!&quot;</span><span class="token punctuation">)</span> <span class="token comment">// print after delay</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Hello,&quot;</span><span class="token punctuation">)</span> <span class="token comment">// main thread continues while coroutine is delayed</span>
+    Thread<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">2000L</span><span class="token punctuation">)</span> <span class="token comment">// block main thread for 2 seconds </span>
+                        <span class="token comment">// to keep JVM alive</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>launch는 코루틴 빌더이며, 이를 이용해 코드를 CoroutineScope안에서 실행시킨다.<br>
+위 예제는 GloablScope를 사용했는데
+GlobalScope의 lifetime 은 전체 앱 프로세스의 의존하므로 앱이 종료하면 같이 끝난다. 그래서 main() 끝에 sleep 을 걸어야 launch 내부 동작을 실행 할 수 있다.</p> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>단, 위 코드를 안드로이드에서 실행하면 sleep을 걸지 않아도 &quot;Hello world&quot;가 출력됨을 알수 있다. Activity를 finish()하더라도 process 자체가 죽지 않기 때문에 sleep이 없더라도 coroutine 내부 코드는 그대로 실행된다.</p></div> <p>delay는 suspend함수다. suspend란 잠시 중단한다는 의미이고, 잠시 중단한다면 언젠가는 다시 resume된다는 뜻이다. 위 코드에서는 delay라는 suspend가 끝이나면 그때 caller가 resume시켜 아랫줄 코드를 실행시킨다.</p> <p>delay라는 함수는 현재 실행중인 thread를 block시키진 않지만 코루틴은 일시 중지시킨다. thread입장에서는 non-blocking이다.</p> <h2 id="runblocking"><a href="#runblocking" class="header-anchor">#</a> runBlocking</h2> <p>위 코드는 non-blocking 함수인 delay()와 blocking 함수인 Thread.sleep() 함수를 혼용하고 있다. 이렇게 쓰면 헷갈리니 blocking 함수라고 명확하게 명시를 해보자.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    GlobalScope<span class="token punctuation">.</span><span class="token function">launch</span> <span class="token punctuation">{</span> <span class="token comment">// launch a new coroutine in background and continue</span>
+        <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000L</span><span class="token punctuation">)</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;World!&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Hello,&quot;</span><span class="token punctuation">)</span> <span class="token comment">// main thread continues here immediately</span>
+    runBlocking <span class="token punctuation">{</span>     <span class="token comment">// but this expression blocks the main thread</span>
+        <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">2000L</span><span class="token punctuation">)</span>  <span class="token comment">// ... while we delay for 2 seconds to keep JVM alive</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>runBlocking{...} 에서 유추할수 있듯이 현재 쓰레드를 블록시키고 새로운 코루틴을 실행시킨다.</p> <p>언제까지 블록 시킬까? 블록안에 있는 코드가 끝날 떄 까지 블록시킨다.
+runBlocking{...}안에 delay(2000)을 실행 시켰으니 2초동안 메인쓰레드가 블록된다. 물론 2초동안 launch했던 코루틴은 동작하고 2초가 지나면 main()은 종료된다.</p> <p>혹은 이렇게도 쓸 수 있다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> runBlocking<span class="token operator">&lt;</span>Unit<span class="token operator">&gt;</span> <span class="token punctuation">{</span> <span class="token comment">// start main coroutine</span>
+    GlobalScope<span class="token punctuation">.</span><span class="token function">launch</span> <span class="token punctuation">{</span> <span class="token comment">// launch a new coroutine in background and continue</span>
+        <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000L</span><span class="token punctuation">)</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;World!&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Hello,&quot;</span><span class="token punctuation">)</span> <span class="token comment">// main coroutine continues here immediately</span>
+    <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">2000L</span><span class="token punctuation">)</span>      <span class="token comment">// delaying for 2 seconds to keep JVM alive</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>runBlocking{...}을 메인메소드에 걸어줌으로써<br>
+시작으로부터 메인스레드를 블록 시키고 top-level 코루틴을 시작한다.<br>
+따라서 runBlocking{...}에서 가장 오래걸리는 delay(2000)이 끝날 때 까지 main 메소드가 살아있다.</p> <div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>안드로이드 의 경우 runBlocking() 함수를 메인 스레드 (UI 스레드) 에서 호출하여 시간이 오래 걸리는 작업을 수행하는 경우 ANR 이 발생할 위험이 있으므로 주의해야한다.</p></div> <h2 id="job"><a href="#job" class="header-anchor">#</a> Job</h2> <p>하지만 delay(1000)인 World! 를 찍기 위해 2초를 기다리는건 비효율적이다.<br>
+이는 Job의 join()을 통해서 대체할 수 있다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> runBlocking <span class="token punctuation">{</span>
+<span class="token comment">//sampleStart</span>
+    <span class="token keyword">val</span> job <span class="token operator">=</span> GlobalScope<span class="token punctuation">.</span><span class="token function">launch</span> <span class="token punctuation">{</span> <span class="token comment">// 새로운 코루틴을 실행하고 job 에 저장</span>
+        <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000L</span><span class="token punctuation">)</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;World!&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Hello,&quot;</span><span class="token punctuation">)</span>
+    job<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// wait until child coroutine completes</span>
+<span class="token comment">//sampleEnd</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>launch는 Job이라는 객체를 반환한다.이는 스케쥴 관리나 상태 등을 확인 할 떄 사용한다.<br>
+job.join()이 job이 끝나기를 계속 기다린다. job이 끝나지 않으면 runBlocking{...}으로 생성한 코루틴은 안끝난다.</p> <p>모든 코루틴빌더(runBlocking{},launch{}...)는 빌더로 인해 생성되는 코드블록안에 CouroutineScope객체를 추가한다. 위 코드에서는 runBlocking의 블록안에서 GlobalScope로 코루틴을 만들어 launch를 했지만 그러지 않고 그냥 launch를 호출하면 바로 바깥의 스코프와 동일한 스코프에 생긴다.<br>
+게다가 바깥의 있는 코루틴은 안쪽에 있는 코루틴이 끝날때 까지 끝나지 않는 다는 성질을 이용해 코드를 좀 더 간결하게 만들 수 있다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> runBlocking <span class="token punctuation">{</span> <span class="token comment">// this: CoroutineScope</span>
+    launch <span class="token punctuation">{</span> <span class="token comment">// launch a new coroutine in the scope of runBlocking</span>
+        <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000L</span><span class="token punctuation">)</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;World!&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Hello,&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/coroutine/coroutine_concept.html" class="prev">
+        Coroutine 개념
+      </a></span> <span class="next"><a href="/docs/coroutine/coroutine_basic2.html">
+        Coroutine 기초 - 2
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docs/assets/js/app.9ec738af.js" defer></script><script src="/docs/assets/js/2.8740eb56.js" defer></script><script src="/docs/assets/js/16.09dcdbac.js" defer></script>
+  </body>
+</html>

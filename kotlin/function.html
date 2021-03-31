@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kotlin 문법 - 함수 | Labyrintos71&#39;s Docs</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="docs with vuepress">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.156e236d.css" as="style"><link rel="preload" href="/docs/assets/js/app.9ec738af.js" as="script"><link rel="preload" href="/docs/assets/js/2.8740eb56.js" as="script"><link rel="preload" href="/docs/assets/js/39.d376624a.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.cb90e021.js"><link rel="prefetch" href="/docs/assets/js/11.52006c39.js"><link rel="prefetch" href="/docs/assets/js/12.2f6fda33.js"><link rel="prefetch" href="/docs/assets/js/13.5dba7c13.js"><link rel="prefetch" href="/docs/assets/js/14.a6f1d96e.js"><link rel="prefetch" href="/docs/assets/js/15.42009d6e.js"><link rel="prefetch" href="/docs/assets/js/16.09dcdbac.js"><link rel="prefetch" href="/docs/assets/js/17.283ab3b0.js"><link rel="prefetch" href="/docs/assets/js/18.d3f3cd4a.js"><link rel="prefetch" href="/docs/assets/js/19.c5f4545b.js"><link rel="prefetch" href="/docs/assets/js/20.569c758a.js"><link rel="prefetch" href="/docs/assets/js/21.f209c001.js"><link rel="prefetch" href="/docs/assets/js/22.c8313833.js"><link rel="prefetch" href="/docs/assets/js/23.1da64bbd.js"><link rel="prefetch" href="/docs/assets/js/24.a70523e5.js"><link rel="prefetch" href="/docs/assets/js/25.a1dc5394.js"><link rel="prefetch" href="/docs/assets/js/26.05cb28ee.js"><link rel="prefetch" href="/docs/assets/js/27.f0605b54.js"><link rel="prefetch" href="/docs/assets/js/28.0063dc56.js"><link rel="prefetch" href="/docs/assets/js/29.0c5a26b7.js"><link rel="prefetch" href="/docs/assets/js/3.687b939c.js"><link rel="prefetch" href="/docs/assets/js/30.e5f8cab6.js"><link rel="prefetch" href="/docs/assets/js/31.873dd8da.js"><link rel="prefetch" href="/docs/assets/js/32.c1ad188c.js"><link rel="prefetch" href="/docs/assets/js/33.6c831e82.js"><link rel="prefetch" href="/docs/assets/js/34.26ae6b14.js"><link rel="prefetch" href="/docs/assets/js/35.fdd56b3b.js"><link rel="prefetch" href="/docs/assets/js/36.76eaa128.js"><link rel="prefetch" href="/docs/assets/js/37.7b8b842b.js"><link rel="prefetch" href="/docs/assets/js/38.77a6b056.js"><link rel="prefetch" href="/docs/assets/js/4.66cf2b18.js"><link rel="prefetch" href="/docs/assets/js/40.9a19af1f.js"><link rel="prefetch" href="/docs/assets/js/41.d90bfe99.js"><link rel="prefetch" href="/docs/assets/js/42.06ed4f23.js"><link rel="prefetch" href="/docs/assets/js/43.5fcd743c.js"><link rel="prefetch" href="/docs/assets/js/44.c48a474c.js"><link rel="prefetch" href="/docs/assets/js/45.584bdafe.js"><link rel="prefetch" href="/docs/assets/js/46.dc254832.js"><link rel="prefetch" href="/docs/assets/js/47.6de23ee5.js"><link rel="prefetch" href="/docs/assets/js/48.8a708e85.js"><link rel="prefetch" href="/docs/assets/js/49.a4b1600d.js"><link rel="prefetch" href="/docs/assets/js/5.729974e5.js"><link rel="prefetch" href="/docs/assets/js/50.7c83830e.js"><link rel="prefetch" href="/docs/assets/js/51.58708a54.js"><link rel="prefetch" href="/docs/assets/js/52.eeaf96a9.js"><link rel="prefetch" href="/docs/assets/js/53.f3de5963.js"><link rel="prefetch" href="/docs/assets/js/6.aa72b1f7.js"><link rel="prefetch" href="/docs/assets/js/7.13287087.js"><link rel="prefetch" href="/docs/assets/js/8.5f2eb7f7.js"><link rel="prefetch" href="/docs/assets/js/9.18840fa1.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.156e236d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">Labyrintos71's Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/kotlin/" class="nav-link router-link-active">
+  Kotlin
+</a></div><div class="nav-item"><a href="/docs/android/" class="nav-link">
+  Android
+</a></div><div class="nav-item"><a href="/docs/flutter/" class="nav-link">
+  Flutter
+</a></div><div class="nav-item"><a href="/docs/nodejs/" class="nav-link">
+  NodeJS
+</a></div><div class="nav-item"><a href="/docs/vuejs/" class="nav-link">
+  VueJS
+</a></div><div class="nav-item"><a href="/docs/electron/" class="nav-link">
+  Electron
+</a></div><div class="nav-item"><a href="/docs/golang/" class="nav-link">
+  Golang
+</a></div><div class="nav-item"><a href="https://github.com/labyrintos71/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/kotlin/" class="nav-link router-link-active">
+  Kotlin
+</a></div><div class="nav-item"><a href="/docs/android/" class="nav-link">
+  Android
+</a></div><div class="nav-item"><a href="/docs/flutter/" class="nav-link">
+  Flutter
+</a></div><div class="nav-item"><a href="/docs/nodejs/" class="nav-link">
+  NodeJS
+</a></div><div class="nav-item"><a href="/docs/vuejs/" class="nav-link">
+  VueJS
+</a></div><div class="nav-item"><a href="/docs/electron/" class="nav-link">
+  Electron
+</a></div><div class="nav-item"><a href="/docs/golang/" class="nav-link">
+  Golang
+</a></div><div class="nav-item"><a href="https://github.com/labyrintos71/docs" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Kotlin</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/kotlin/" aria-current="page" class="sidebar-link">시작하기</a></li><li><a href="/docs/kotlin/variable.html" class="sidebar-link">Kotlin 문법 - 변수</a></li><li><a href="/docs/kotlin/ifwhen.html" class="sidebar-link">Kotlin 문법 - 제어흐름</a></li><li><a href="/docs/kotlin/classobject.html" class="sidebar-link">Kotlin 문법 - 클래스 &amp; 오브젝트</a></li><li><a href="/docs/kotlin/function.html" aria-current="page" class="active sidebar-link">Kotlin 문법 - 함수</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/kotlin/function.html#기본-함수-형태" class="sidebar-link">기본 함수 형태</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/function.html#람다식" class="sidebar-link">람다식</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/function.html#익명-함수" class="sidebar-link">익명 함수</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/function.html#고차-함수" class="sidebar-link">고차 함수</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/function.html#inline-함수" class="sidebar-link">inline 함수</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/function.html#확장-함수" class="sidebar-link">확장 함수</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/function.html#getter-setter-오버라이딩" class="sidebar-link">getter, setter 오버라이딩</a></li><li class="sidebar-sub-header"><a href="/docs/kotlin/function.html#vararg-가변인자" class="sidebar-link">vararg, 가변인자</a></li></ul></li><li><a href="/docs/kotlin/extensionfunction.html" class="sidebar-link">Kotlin 문법 - 범위지정함수</a></li><li><a href="/docs/kotlin/delegation.html" class="sidebar-link">Kotlin 문법 - 위임</a></li><li><a href="/docs/kotlin/selenium.html" class="sidebar-link">Selenium</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Coroutine</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Android</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Flutter</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>NodeJS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>VueJS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Electron</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Golang</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Tradingview</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/tradingview/" class="sidebar-link">시작하기</a></li><li><a href="/docs/tradingview/udf.html" class="sidebar-link">UDF-Reference</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="kotlin-문법-함수"><a href="#kotlin-문법-함수" class="header-anchor">#</a> Kotlin 문법 - 함수</h1> <h2 id="기본-함수-형태"><a href="#기본-함수-형태" class="header-anchor">#</a> 기본 함수 형태</h2> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">public</span> <span class="token keyword">fun</span> <span class="token function">makeText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> String <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">&quot;x = <span class="token interpolation variable">$x</span> y = <span class="token interpolation variable">$y</span>&quot;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//코틀린에선 Unit이 void</span>
+<span class="token keyword">fun</span> <span class="token function">printText</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Unit <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&quot;x = <span class="token interpolation variable">$x</span> y = <span class="token interpolation variable">$y</span>&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="람다식"><a href="#람다식" class="header-anchor">#</a> 람다식</h2> <p>람다식이란 식별자 없이 실행가능한 함수를 의미한다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token comment">//람다식은 왼쪽이든 오른쪽이든 자료형을 지정해줘야 한다.</span>
+<span class="token keyword">fun</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">1</span>
+
+<span class="token comment">//람다식, 자료형 지정</span>
+<span class="token keyword">var</span> sum<span class="token operator">:</span> <span class="token punctuation">(</span>Int<span class="token punctuation">,</span> Int<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> Int <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token operator">:</span> Int<span class="token punctuation">,</span> b<span class="token operator">:</span> Int <span class="token operator">-&gt;</span> a <span class="token operator">+</span> b <span class="token punctuation">}</span>
+<span class="token comment">//람다식, 자료형 오른쪽에만 지정</span>
+<span class="token keyword">var</span> sum1 <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token operator">:</span> Int<span class="token punctuation">,</span> b<span class="token operator">:</span> Int <span class="token operator">-&gt;</span> a <span class="token operator">+</span> b <span class="token punctuation">}</span>
+<span class="token comment">//람다식, 자료형 왼쪽에만 지정</span>
+<span class="token keyword">var</span> sum2<span class="token operator">:</span> <span class="token punctuation">(</span>Int<span class="token punctuation">,</span> Int<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> Int <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token punctuation">,</span> b <span class="token operator">-&gt;</span> a <span class="token operator">+</span> b <span class="token punctuation">}</span>
+
+<span class="token comment">//람다식, 리턴값이 없을경우 예제</span>
+<span class="token keyword">val</span> funcSayHi<span class="token operator">:</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> Unit <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> String <span class="token operator">-&gt;</span> <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Hi <span class="token interpolation variable">$name</span>&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+
+<span class="token comment">//메소드에 람다식을 인수로 받는 예제</span>
+<span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">temp</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> a<span class="token operator">:</span> Int<span class="token punctuation">,</span> b<span class="token operator">:</span> Int <span class="token operator">-&gt;</span> a <span class="token operator">+</span> b <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token function">temp</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> a<span class="token operator">:</span> Int<span class="token punctuation">,</span> b<span class="token operator">:</span> Int <span class="token operator">-&gt;</span> a <span class="token operator">+</span> b <span class="token punctuation">}</span>
+    <span class="token function">temp</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">::</span>sum3<span class="token punctuation">)</span>
+    <span class="token function">emptyrambda</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token number">7</span> <span class="token punctuation">}</span>
+    <span class="token function">emptyrambda</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token number">7</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token function">emptyrambda</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token operator">-&gt;</span> <span class="token number">7</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token function">emptyrambdas</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> a<span class="token operator">:</span> Int <span class="token operator">-&gt;</span> a <span class="token operator">+</span> <span class="token number">7</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fun</span> <span class="token function">temp</span><span class="token punctuation">(</span>a<span class="token operator">:</span> Int<span class="token punctuation">,</span> b<span class="token operator">:</span> Int<span class="token punctuation">,</span> c<span class="token operator">:</span> <span class="token punctuation">(</span>Int<span class="token punctuation">,</span> Int<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> Int<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">c</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+<span class="token keyword">fun</span> <span class="token function">sum3</span><span class="token punctuation">(</span>a<span class="token operator">:</span> Int<span class="token punctuation">,</span> b<span class="token operator">:</span> Int<span class="token punctuation">)</span><span class="token operator">:</span> Int <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> a <span class="token operator">+</span> b
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fun</span> <span class="token function">emptyrambda</span><span class="token punctuation">(</span>a<span class="token operator">:</span> Int<span class="token punctuation">,</span> c<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> Any<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">fun</span> <span class="token function">emptyrambdas</span><span class="token punctuation">(</span>a<span class="token operator">:</span> Int<span class="token punctuation">,</span> c<span class="token operator">:</span> <span class="token punctuation">(</span>a<span class="token operator">:</span> Int<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> Any<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">c</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+</code></pre></div><h2 id="익명-함수"><a href="#익명-함수" class="header-anchor">#</a> 익명 함수</h2> <p>람다식 안에서 return 할 수 없는 경우가 있다.<br>
+처리 중간에 조건을 주고 중간에 빠져나오고 싶지만 return이 없는 람다식의 경우다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">var</span> funcSum <span class="token operator">=</span> <span class="token keyword">fun</span><span class="token punctuation">(</span>a<span class="token operator">:</span> Int<span class="token punctuation">,</span> b<span class="token operator">:</span> Int<span class="token punctuation">)</span><span class="token operator">:</span> Int <span class="token punctuation">{</span> <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token punctuation">}</span>
+
+numbers<span class="token punctuation">.</span><span class="token function">forEach</span> <span class="token punctuation">{</span> number <span class="token operator">-&gt;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 여기에서 처리를 끝내고 싶은 경우</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">..</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//이러한 경우에는 람다식이 아닌 익명 함수를 사용하는 것이 좋다.</span>
+numbers<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">fun</span><span class="token punctuation">(</span>number<span class="token operator">:</span> Int<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token comment">// 처리 종류</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token operator">..</span><span class="token punctuation">.</span> 
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="고차-함수"><a href="#고차-함수" class="header-anchor">#</a> 고차 함수</h2> <p>고차함수란 함수의 인자나, 반환값이 람다식인경우를 말한다.<br>
+예를들면 list의 filter 나 map은 인자값으로 람다를 받기 때문에 고차함수다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">class</span> <span class="token function">Order</span><span class="token punctuation">(</span><span class="token keyword">val</span> itemCount<span class="token operator">:</span> Int<span class="token punctuation">)</span> 
+
+<span class="token keyword">fun</span> <span class="token function">getShippingCostCalculator</span><span class="token punctuation">(</span>reqOpt<span class="token operator">:</span> Boolean<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token punctuation">(</span>Order<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> Double <span class="token punctuation">{</span> 
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>reqOpt <span class="token operator">==</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        <span class="token keyword">return</span> <span class="token punctuation">{</span> order <span class="token operator">-&gt;</span> <span class="token number">6</span> <span class="token operator">+</span> <span class="token number">2.1</span> <span class="token operator">*</span> order<span class="token punctuation">.</span>itemCount <span class="token punctuation">}</span> 
+    <span class="token punctuation">}</span> 
+        <span class="token keyword">return</span> <span class="token punctuation">{</span> order <span class="token operator">-&gt;</span> <span class="token number">1.2</span> <span class="token operator">*</span> order<span class="token punctuation">.</span>itemCount <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span> 
+
+<span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">val</span> calculator <span class="token operator">=</span> <span class="token function">getShippingCostCalculator</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> 
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Shipping costs <span class="token interpolation"><span class="token delimiter variable">${</span><span class="token function">calculator</span><span class="token punctuation">(</span><span class="token function">Order</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token delimiter variable">}</span></span>&quot;</span><span class="token punctuation">)</span> 
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="inline-함수"><a href="#inline-함수" class="header-anchor">#</a> inline 함수</h2> <p>고차 함수를 사용할 때 java 1.6 과의 호환성을 위해 런타임에 패널티가 있고.<br>
+각 함수는 객체고, 클로저를 가지고 있다. 따라서 메모리를 차지하고 함수 콜을 위한 런타임 오버헤드 가 있다.
+이 때 inline 키워드를 사용하면 컴파일시 bytecode가 복사되어 들어가기때문에 이를 방지할 수 있다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">inline</span> <span class="token keyword">fun</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token number">456</span><span class="token punctuation">)</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token number">789</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">fun</span> <span class="token function">testfun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 컴파일시엔 아래처럼 변환된다.</span>
+
+<span class="token keyword">fun</span> <span class="token function">testfun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token number">456</span><span class="token punctuation">)</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token number">789</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="확장-함수"><a href="#확장-함수" class="header-anchor">#</a> 확장 함수</h2> <p>코틀린에서는 상속, 디자인 패턴을 사용하지 않고 새로운 기능을 가지는 클래스로 확장할 수 있는 기능을 제공한다.<br>
+extension 이라 부르는데 아래 예제를 봐보자.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">var</span> strs <span class="token operator">=</span> <span class="token string">&quot;string&quot;</span>
+
+<span class="token keyword">val</span> addStr <span class="token operator">=</span> <span class="token keyword">fun</span> String<span class="token punctuation">.</span><span class="token punctuation">(</span>str<span class="token operator">:</span> String<span class="token punctuation">)</span><span class="token operator">:</span> String <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span> <span class="token operator">+</span> str
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fun</span> String<span class="token punctuation">.</span><span class="token function">deleteLastStr</span><span class="token punctuation">(</span>successor<span class="token operator">:</span> String<span class="token punctuation">)</span><span class="token operator">:</span> String <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span> <span class="token operator">+</span> successor
+<span class="token punctuation">}</span>
+<span class="token comment">// 여기서 리시버타입은 String이된다. 즉 확장하는 자기 자신의 타입인것</span>
+<span class="token comment">//책에서 나오는 리터럴은 람다를 넘겨준 식. 즉 표현식 그 자체임</span>
+<span class="token comment">//         여기 부분</span>
+<span class="token keyword">private</span> <span class="token keyword">fun</span> String<span class="token punctuation">.</span><span class="token function">deleteLastStr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> String <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">private</span> <span class="token keyword">fun</span> Any<span class="token punctuation">.</span>deleteLastStrㄴ<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> String <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token comment">// str = str.addStr(&quot;하기 딱 좋은 날씨로구나.&quot;)</span>
+
+<span class="token comment">//확장함수 심화</span>
+<span class="token keyword">fun</span> <span class="token function">extendFun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">fun</span> String<span class="token punctuation">.</span><span class="token function">lastChar1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Char <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+    <span class="token comment">//this 생략 가능</span>
+    <span class="token keyword">fun</span> String<span class="token punctuation">.</span><span class="token function">lastChar2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Char <span class="token operator">=</span> <span class="token keyword">get</span><span class="token punctuation">(</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">fun</span> <span class="token operator">&lt;</span>T<span class="token operator">&gt;</span> Collection<span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token punctuation">.</span><span class="token function">convertToString</span><span class="token punctuation">(</span>
+        separator<span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">&quot;,&quot;</span><span class="token punctuation">,</span>
+        prefix<span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">&quot;(&quot;</span><span class="token punctuation">,</span>
+        postfix<span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">&quot;)&quot;</span>
+    <span class="token punctuation">)</span><span class="token operator">:</span> String <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> result <span class="token operator">=</span> prefix
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> it<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span>separator <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">forEach</span> <span class="token punctuation">{</span> result <span class="token operator">=</span> result <span class="token operator">+</span> it <span class="token punctuation">}</span>
+        <span class="token comment">// == this.forEach { result = result + it + separator }</span>
+        <span class="token keyword">return</span> result<span class="token punctuation">.</span><span class="token function">deleteLastStr</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> postfix
+        
+        <span class="token comment">//String 제네릭</span>
+        <span class="token keyword">fun</span> Collection<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>
+            separator<span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">&quot;,&quot;</span><span class="token punctuation">,</span>
+            prefix<span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">&quot;(&quot;</span><span class="token punctuation">,</span>
+            postfix<span class="token operator">:</span> String <span class="token operator">=</span> <span class="token string">&quot;)&quot;</span>
+        <span class="token punctuation">)</span><span class="token operator">:</span> String <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; numbers&quot;</span>
+        <span class="token comment">//사용</span>
+        <span class="token keyword">val</span> intlist <span class="token operator">=</span> <span class="token function">listOf</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>
+        <span class="token comment">//intlist.join() //에러!!! Int 타입은 불가능하다</span>
+        <span class="token comment">// 사용</span>
+        <span class="token keyword">val</span> list <span class="token operator">=</span> <span class="token function">listOf</span><span class="token punctuation">(</span><span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;3&quot;</span><span class="token punctuation">)</span>
+        <span class="token function">print</span><span class="token punctuation">(</span>list<span class="token punctuation">.</span><span class="token function">joinToString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//확장 프로퍼티</span>
+<span class="token keyword">class</span> extendProperty <span class="token punctuation">{</span>
+    <span class="token comment">//get() 구현</span>
+    <span class="token keyword">val</span> String<span class="token punctuation">.</span>lastChar<span class="token operator">:</span> Char
+        <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">get</span><span class="token punctuation">(</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token comment">//  get() { return last().toString()}</span>
+
+    <span class="token comment">//리스트인경우 get(), set() 구현</span>
+    <span class="token keyword">var</span> List<span class="token operator">&lt;</span>Any<span class="token operator">&gt;</span><span class="token punctuation">.</span>name<span class="token operator">:</span> String
+        <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> name
+        <span class="token keyword">set</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           name <span class="token operator">=</span> <span class="token function">last</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token keyword">fun</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;zerog&quot;</span><span class="token punctuation">.</span>lastChar        <span class="token comment">//확장 프로퍼티 호출</span>
+        <span class="token keyword">val</span> list <span class="token operator">=</span> <span class="token function">listOf</span><span class="token punctuation">(</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;c&quot;</span><span class="token punctuation">)</span>
+        list<span class="token punctuation">.</span>name              <span class="token comment">//get()</span>
+        list<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;d&quot;</span>      <span class="token comment">//set()</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="getter-setter-오버라이딩"><a href="#getter-setter-오버라이딩" class="header-anchor">#</a> getter, setter 오버라이딩</h2> <p>코틀린에서는 getter와 setter 를 오버라이딩 할 수 있다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token comment">//getter 오버라이딩을 이용해 nullcheck 처리 및 uppercase 반환 예제</span>
+<span class="token keyword">class</span> nullcheck <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> string<span class="token operator">:</span> String<span class="token operator">?</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+        <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>field <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token string">&quot;null&quot;</span> <span class="token keyword">else</span> field
+
+    <span class="token keyword">var</span> stringupper<span class="token operator">:</span> String<span class="token operator">?</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+        <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>field <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token string">&quot;null&quot;</span> <span class="token keyword">else</span> field<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">//when을 적용해서 쓸 수도 있다.</span>
+<span class="token keyword">class</span> FakeAge <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> age<span class="token operator">:</span> Int <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">set</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            field <span class="token operator">=</span> <span class="token keyword">when</span> <span class="token punctuation">{</span>
+                value <span class="token operator">&lt;</span> <span class="token number">18</span> <span class="token operator">-&gt;</span> <span class="token number">18</span>
+                value <span class="token keyword">in</span> <span class="token number">18</span><span class="token operator">..</span><span class="token number">30</span> <span class="token operator">-&gt;</span> value
+                <span class="token keyword">else</span> <span class="token operator">-&gt;</span> value <span class="token operator">-</span> <span class="token number">3</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> getexample <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> array <span class="token operator">=</span> mutableListOf<span class="token operator">&lt;</span>Int<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+    <span class="token keyword">val</span> isListBig<span class="token operator">:</span> Boolean
+        <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> array<span class="token punctuation">.</span>size <span class="token operator">&gt;</span> <span class="token number">2</span>
+
+    <span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">&quot;test&quot;</span>
+        <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> field<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token punctuation">}</span>
+
+    <span class="token keyword">fun</span> <span class="token function">getsetExample</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">getexample</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>isListBig
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="vararg-가변인자"><a href="#vararg-가변인자" class="header-anchor">#</a> vararg, 가변인자</h2> <p>코틀린에서는 가변인자를 받고싶을 때 아래와 같이 하면 된다.</p> <div class="language-kotlin extra-class"><pre class="language-kotlin"><code><span class="token keyword">fun</span> <span class="token function">varags</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> list <span class="token operator">=</span> <span class="token function">arrayOf</span><span class="token punctuation">(</span><span class="token string">&quot;as&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;as1&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;as2&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;as3&quot;</span><span class="token punctuation">)</span>
+    <span class="token function">varargTest</span><span class="token punctuation">(</span><span class="token operator">*</span>list<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fun</span> <span class="token function">varargTest</span><span class="token punctuation">(</span><span class="token keyword">vararg</span> numbers<span class="token operator">:</span> Int<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    numbers<span class="token punctuation">.</span><span class="token function">map</span> <span class="token punctuation">{</span> it <span class="token operator">-&gt;</span>
+        <span class="token function">println</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">fun</span> <span class="token function">varargTest</span><span class="token punctuation">(</span><span class="token keyword">vararg</span> a<span class="token operator">:</span> String<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">for</span> <span class="token punctuation">(</span>a_ <span class="token keyword">in</span> a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">println</span><span class="token punctuation">(</span>a_<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/kotlin/classobject.html" class="prev">
+        Kotlin 문법 - 클래스 &amp; 오브젝트
+      </a></span> <span class="next"><a href="/docs/kotlin/extensionfunction.html">
+        Kotlin 문법 - 범위지정함수
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docs/assets/js/app.9ec738af.js" defer></script><script src="/docs/assets/js/2.8740eb56.js" defer></script><script src="/docs/assets/js/39.d376624a.js" defer></script>
+  </body>
+</html>

@@ -16,7 +16,7 @@
 JS API와 연동을 위한 통신 규격, 정의된 함수에 맞춰서 해당하는 기능을 구현해야 한다. 
 :::
 
-
+b24=
 [바이낸스 UDF 예제](https://github.com/bergusman/tradingview-udf-binance-node)
 
 [UDF 문서](https://github.com/tradingview/charting_library/wiki/UDF)
